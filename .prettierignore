@@ -1,0 +1,4 @@
+legacy/
+build/
+.svelte-kit/
+node_modules/
