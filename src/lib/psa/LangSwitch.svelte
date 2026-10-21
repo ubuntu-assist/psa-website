@@ -11,17 +11,17 @@
   const current = $derived(($locale || 'fr').slice(0, 2));
 </script>
 
-<div class="flex items-center gap-1" role="group" aria-label={$_('nav.lang')}>
+<div class="flex items-center gap-1 rounded-full border border-ink/10 p-1" role="group" aria-label={$_('nav.lang')}>
   {#each langs as l}
     <button
       type="button"
       onclick={() => setLocale(l.code)}
       aria-pressed={current === l.code}
       title={l.label}
-      class="flex items-center gap-1 rounded-md px-1.5 py-1 text-xs font-semibold uppercase duration-200 {current ===
+      class="flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-xs font-bold uppercase duration-200 {current ===
       l.code
-        ? 'bg-g50 text-g400'
-        : 'text-n300 hover:text-n700'}"
+        ? 'bg-sun text-ink'
+        : 'opacity-60 hover:opacity-100'}"
     >
       <img
         src="https://flagcdn.com/w20/{l.flag}.png"

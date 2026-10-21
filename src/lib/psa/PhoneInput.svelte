@@ -110,14 +110,14 @@
 
 <div
   bind:this={root}
-  class="relative flex rounded-xl border {invalid
-    ? 'border-r300'
-    : 'border-n30 focus-within:border-g400'}"
+  class="relative flex rounded-2xl border bg-paper {invalid
+    ? 'border-clay'
+    : 'border-ink/10 focus-within:border-moss'}"
 >
   <!-- country trigger -->
   <button
     type="button"
-    class="flex items-center gap-1.5 rounded-s-xl border-e border-n30 px-3 py-3 text-sm hover:bg-n20"
+    class="flex items-center gap-1.5 rounded-s-2xl border-e border-ink/10 px-3 py-3.5 text-sm hover:bg-cream"
     aria-haspopup="listbox"
     aria-expanded={open}
     onclick={() => (open = !open)}
@@ -136,7 +136,7 @@
     autocomplete="tel"
     value={national}
     oninput={onInput}
-    class="w-full rounded-e-xl bg-transparent px-3 py-3 outline-none placeholder:text-n100"
+    class="w-full rounded-e-2xl bg-transparent px-3 py-3.5 outline-none placeholder:text-ink/40"
   />
 
   {#if open}

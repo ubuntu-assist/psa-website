@@ -1,21 +1,44 @@
 <script>
+  import { onMount } from 'svelte';
   import { _, json } from 'svelte-i18n';
   import { teamPhotos } from './data.js';
+  import { reveal } from './reveal.js';
+
+  // Layout after the « team-arch » block (ui-layouts.com): every portrait is cut into
+  // its own shape (notch, cut corner, brush blob, arch…), a name tag overlaps its
+  // bottom edge, and a thick hand-drawn wave sweeps across the section.
+  // Shape per member, in order; 9 (round arch) is reused for the 12th.
+  const SHAPES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 9];
 
   const members = $derived(
     /** @type {{nom:string, poste:string}[]} */ ($json('team.members') || []).map((m, i) => ({
       ...m,
-      photo: teamPhotos[i % teamPhotos.length],
-      clip: (i % 11) + 1
+      photo: teamPhotos[i] || '',
+      clip: SHAPES[i % SHAPES.length],
+      initials: m.nom
+        .replace(/^(Ing|Eng)\.\s*/, '')
+        .split(/\s+/)
+        .slice(0, 2)
+        .map((w) => w[0])
+        .join('')
     }))
   );
 
-  const row1 = $derived(members.slice(0, 4));
-  const row2 = $derived(members.slice(4, 7));
-  const row3 = $derived(members.slice(7, 11));
+  // the wave draws itself once it scrolls into view
+  /** @type {SVGSVGElement | undefined} */
+  let wave = $state();
+  let drawn = $state(false);
+  onMount(() => {
+    if (!wave || matchMedia('(prefers-reduced-motion: reduce)').matches) return void (drawn = true);
+    const io = new IntersectionObserver(([e]) => e.isIntersecting && ((drawn = true), io.disconnect()), {
+      threshold: 0.3
+    });
+    io.observe(wave);
+    return () => io.disconnect();
+  });
 </script>
 
-<!-- organic blob clip-paths for the team photos -->
+<!-- portrait clip shapes (objectBoundingBox → work at any size) -->
 <svg width="0" height="0" class="absolute">
   <defs>
     <clipPath id="psa-team-clip-1" clipPathUnits="objectBoundingBox">
@@ -84,77 +107,73 @@
   </defs>
 </svg>
 
-<section class="stp-30 sbp-30 relative overflow-hidden">
-  <!-- faint decorative hand-drawn line -->
-  <svg
-    class="pointer-events-none absolute left-0 top-10 hidden w-full opacity-40 md:block"
-    viewBox="0 0 250 100"
-    fill="none"
-    preserveAspectRatio="xMidYMid meet"
-    aria-hidden="true"
-  >
-    <path
-      d="M 25.00 57.48 C 42.30 48.81, 43.66 31.99, 62.15 31.28 C 82.76 31.04, 78.11 47.53, 97.31 45.87 C 112.24 45.87, 119.05 29.14, 133.12 27.96 C 145.35 26.06, 159.85 43.74, 171.93 40.90 C 190.42 41.13, 203.91 10.00, 225.00 14.03"
-      stroke="#1B8A3D"
-      stroke-width="0.6"
-      stroke-linecap="round"
-    ></path>
-  </svg>
-
+<section class="glow-corners-green relative overflow-hidden bg-cream py-20 md:py-28">
   <div class="container relative">
-    <div class="mx-auto max-w-[640px] text-center">
+    <div class="mx-auto max-w-[720px] text-center" use:reveal>
       <a
         href="/stage"
-        class="inline-flex items-center gap-2 rounded-full border border-g75 bg-g50 px-4 py-1.5 text-sm font-semibold text-g400 duration-300 hover:bg-g75"
+        class="inline-flex items-center rounded-full bg-sun px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-ink transition-transform hover:-translate-y-0.5"
       >
         {$_('team.hiring')}
       </a>
-      <h2 class="heading-2 pt-4">
-        {$_('team.titlePre')} <span class="text-g400">{$_('team.titleEm')}</span>
+      <h2 class="t-h2 pt-6">
+        {$_('team.titlePre')} <span class="t-em text-moss">{$_('team.titleEm')}</span>
       </h2>
-      <p class="pt-4 text-n300">{$_('team.para')}</p>
+      <p class="t-lead mx-auto max-w-[560px] pt-5">{$_('team.para')}</p>
     </div>
 
-    <div class="stp-15 flex flex-wrap justify-center gap-6 sm:gap-8">
-      {#each row1 as m}
-        <figure class="flex w-[150px] flex-col items-center text-center sm:w-[180px] lg:w-[200px]">
-          <figcaption class="pb-3">
-            <p class="text-sm font-bold text-n900 sm:text-base">{m.nom}</p>
-            <p class="text-xs text-n300 sm:text-sm">{m.poste}</p>
-          </figcaption>
-          <div class="aspect-[340/300] w-full overflow-hidden bg-n30" style="clip-path:url(#psa-team-clip-{m.clip})">
-            <img src="/assets/images/{m.photo}" alt={m.nom} class="h-full w-full object-cover" />
-          </div>
-        </figure>
+    <ul class="relative z-10 flex flex-wrap justify-center gap-x-4 gap-y-10 pt-14 md:gap-x-5 md:pt-16">
+      {#each members as m, i}
+        <li
+          class="group w-[calc(50%-8px)] sm:w-[calc(33.333%-11px)] md:w-[calc(33.333%-14px)] lg:w-[250px]"
+          use:reveal={{ delay: (i % 4) * 80 }}
+        >
+          <figure class="relative">
+            <div class="aspect-[4/5] w-full" style="clip-path:url(#psa-team-clip-{m.clip})">
+              {#if m.photo}
+                <img
+                  src="/assets/images/psa/team/{m.photo}"
+                  alt={m.nom}
+                  loading="lazy"
+                  class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+              {:else}
+                <div class="flex h-full w-full items-center justify-center bg-forest font-display text-6xl text-sun">
+                  {m.initials}
+                </div>
+              {/if}
+            </div>
+            <figcaption
+              class="relative mx-2.5 -mt-9 rounded-xl border border-ink/10 bg-paper px-3.5 py-2.5 shadow-[0_10px_24px_-14px_rgba(10,36,18,0.35)] transition-transform duration-500 group-hover:-translate-y-1"
+            >
+              <p class="text-sm font-bold leading-tight text-ink md:text-[15px]">{m.nom}</p>
+              <p class="pt-1 font-label text-[11px] uppercase leading-snug tracking-[0.1em] text-ink/55">
+                {m.poste}
+              </p>
+            </figcaption>
+          </figure>
+        </li>
       {/each}
-    </div>
+    </ul>
 
-    <div class="flex flex-wrap justify-center gap-6 pt-8 sm:gap-8">
-      {#each row2 as m}
-        <figure class="flex w-[150px] flex-col items-center text-center sm:w-[180px] lg:w-[200px]">
-          <figcaption class="pb-3">
-            <p class="text-sm font-bold text-n900 sm:text-base">{m.nom}</p>
-            <p class="text-xs text-n300 sm:text-sm">{m.poste}</p>
-          </figcaption>
-          <div class="aspect-[340/300] w-full overflow-hidden bg-n30" style="clip-path:url(#psa-team-clip-{m.clip})">
-            <img src="/assets/images/{m.photo}" alt={m.nom} class="h-full w-full object-cover" />
-          </div>
-        </figure>
-      {/each}
-    </div>
-
-    <div class="flex flex-wrap justify-center gap-6 pt-8 sm:gap-8">
-      {#each row3 as m}
-        <figure class="flex w-[150px] flex-col items-center text-center sm:w-[180px] lg:w-[200px]">
-          <figcaption class="pb-3">
-            <p class="text-sm font-bold text-n900 sm:text-base">{m.nom}</p>
-            <p class="text-xs text-n300 sm:text-sm">{m.poste}</p>
-          </figcaption>
-          <div class="aspect-[340/300] w-full overflow-hidden bg-n30" style="clip-path:url(#psa-team-clip-{m.clip})">
-            <img src="/assets/images/{m.photo}" alt={m.nom} class="h-full w-full object-cover" />
-          </div>
-        </figure>
-      {/each}
-    </div>
+    <!-- hand-drawn wave -->
+    <svg
+      bind:this={wave}
+      class="pointer-events-none relative z-0 -mt-16 w-full text-forest md:-mt-24"
+      viewBox="0 0 250 60"
+      fill="none"
+      preserveAspectRatio="xMidYMid meet"
+      aria-hidden="true"
+    >
+      <path
+        d="M 4 52 C 21.3 43.3, 22.7 26.5, 41.2 25.8 C 61.8 25.6, 57.1 42, 76.3 40.4 C 91.2 40.4, 98 23.6, 112.1 22.5 C 124.4 20.6, 138.9 38.2, 150.9 35.4 C 169.4 35.6, 182.9 4.5, 204 8.5 C 216 10.5, 230 6, 246 6"
+        pathLength="1"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        class="transition-[stroke-dashoffset] duration-[2400ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
+        style="stroke-dasharray:1; stroke-dashoffset:{drawn ? 0 : 1}"
+      ></path>
+    </svg>
   </div>
 </section>

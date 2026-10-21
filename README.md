@@ -9,13 +9,17 @@ designs (hero, feature cards, category grid, step tabs, "secure guard" checklist
 CTA, testimonials, contact) with PSA content and the green/yellow charte. Template
 images are kept as placeholders for now.
 
-Menu : **Produits & Services · À propos · Alimentation & Santé · Blog · Contact**
+Menu : **Produits & Services · À propos · Partenaires · Actions sociales · Médiathèque · Blog · Contact**
+(« Alimentation & Santé » est désormais rattaché à Produits & Services — page `/alimentation-sante` conservée).
 
 | Route | Page |
 | --- | --- |
-| `/` | Accueil — hero, 4 offres, aperçu produits, « Pourquoi PSA », **Démarche** (`#demarche`), CTA stage, aperçu certifications, aperçu Alimentation & Santé, **FAQ**, témoignages, **ruban Partenaires** (`#partenaires`), **Actualités**, bande CTA |
-| `/produits` | Produits & Services (grille de catégories + bloc services à cartes flottantes) |
-| `/a-propos` | À propos & garanties (collage image + certifications) |
+| `/` | Accueil — hero (nom complet + slogan sous la photo), **secteurs d'activités**, bandeau **« Depuis 2014 » + chiffres-clés**, 7 catégories, aperçu produits, « Pourquoi PSA », **Démarche** (`#demarche`), CTA stage, aperçu certifications, aperçu Alimentation & Santé, **FAQ**, témoignages, **ruban Partenaires** (logos réels), **Actualités**, **QR codes « Scanner pour nous retrouver »**, bande CTA |
+| `/produits` | Produits & Services — bannière, présentation détaillée des 7 catégories (ancres `#plants-semences`…), lien santé, catalogue + QR |
+| `/a-propos` | À propos — Vision, Mission, Valeurs, certificat MINADER (photo), équipe réelle |
+| `/partenaires` | Partenaires institutionnels & techniques (logos dans `static/assets/images/psa/partners/`) |
+| `/actions-sociales` | Actions sociales + dons (MoMo, OM, RIB avec boutons copier) |
+| `/mediatheque` | Bibliothèque & médiathèque — onglets Documents / Photos (lightbox) / Vidéos |
 | `/alimentation-sante` | Alimentation & Santé (Plan Santé Assurée + 2 catalogues) |
 | `/blog` | Blog — liste d'articles (fil d'ariane sombre + cartes) |
 | `/blog/[slug]` | Article — prérendu depuis `posts` dans `data.js` (4 articles) |
@@ -77,6 +81,25 @@ recentrer. Les 8 témoignages sont dans l'i18n ; les portraits cyclent sur
 - Blog `[slug]` routes are prerendered from `data.js` `posts` (slugs are language-neutral
   IDs); the article body comes from the active locale's `posts` array.
 
+### Emails (Resend)
+
+Forms send real emails through [Resend](https://resend.com) via three server endpoints
+(the only non-prerendered routes; deployed as Vercel functions by `@sveltejs/adapter-vercel`):
+
+| Endpoint | Form | What it does |
+| --- | --- | --- |
+| `POST /api/contact` | Contact | Emails PSA (reply-to = visitor) + sends the visitor an acknowledgement (FR/EN) |
+| `POST /api/candidature` | Stage | Emails the application **with the CV attached** (PDF/DOC/DOCX, 4 MB max) + acknowledgement |
+| `POST /api/newsletter` | Footer | Adds the address to Resend Contacts (optional segment) + sends a welcome email |
+
+- Shared zod schemas in `src/lib/psa/schemas.js` validate on both the browser and the server.
+- Email layout and copy: `src/lib/server/email.js`. A hidden honeypot field drops bot posts.
+- If sending fails, the visitor is offered email (`mailto:`) and WhatsApp fallbacks.
+- **Setup:** copy `.env.example` to `.env` (local) and add the same variables in Vercel →
+  Project → Settings → Environment Variables: `RESEND_API_KEY`, `RESEND_FROM` (an address on a
+  domain verified in Resend), `RESEND_TO`, optionally `RESEND_SEGMENT_ID`.
+  Without `RESEND_API_KEY` the endpoints answer `503 email_not_configured`.
+
 ### Form validation
 
 - The contact form (`ContactSection.svelte`) uses **`sveltekit-superforms` in SPA mode**
@@ -91,9 +114,10 @@ recentrer. Les 8 témoignages sont dans l'i18n ; les portraits cyclent sur
 - On a valid submit the form opens the visitor's mail client (`mailto:`); a "WhatsApp"
   button sends the same content via `wa.me`.
 - All interactivity is self-contained Svelte (`$state`) so it survives client-side navigation.
-- The contact form opens the visitor's mail client (`mailto:`), with a WhatsApp fallback.
-- **`TODO` in `src/lib/psa/data.js`:** the two `wa.me/237690810873` catalogue links are
-  placeholders — replace with the real WhatsApp catalogue URLs.
+- All official links (catalogue WhatsApp, Google Maps sites, réseaux sociaux) live in `LINKS`
+  in `src/lib/psa/data.js`. The QR codes in `static/assets/images/psa/qr/` are generated from
+  them — **run `npm run qr` after changing a link**.
+- The footer newsletter posts to `/api/newsletter` (Resend Contacts).
 
 The root `src/routes/+layout.svelte` only loads the template's Swiper/AOS bundle
 (`servibe.js`) when template markup is on the page, so PSA pages ship no extra JS.
@@ -150,7 +174,7 @@ Hand-written pieces (not generated):
 
 ## Notes
 
-- **Adapter:** `@sveltejs/adapter-static` — everything prerenders to `./build`.
+- **Adapter:** `@sveltejs/adapter-vercel` — every page prerenders; only `/api/*` runs server-side.
 - `static/assets/` is a verbatim copy of the template's `assets/` (images, vendor CSS/JS).
 - `legacy/` holds the original webpack project (`*.html`, `partials/`, `assets/`, configs, `dist/`) for reference. Safe to delete once you're happy.
 - The grey `NNNxNNN` boxes are the template's own placeholder images, not a bug.

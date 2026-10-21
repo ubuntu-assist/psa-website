@@ -1,13 +1,18 @@
 export default {
   meta: {
-    homeTitle: "Pépinière Semences d'Avenir — Plants, semences & services agricoles à Dschang",
+    homeTitle:
+      "Pépinière Semences d'Avenir (PSA) — Plants, semences & services agricoles à Dschang",
     homeDesc:
-      "Pépinière Semences d'Avenir (Dschang, Cameroun) : plants et semences certifiés, fertilisants écologiques, services agricoles et ruraux, formations, et volet Alimentation & Santé naturelle."
+      "Pépinière Semences d'Avenir (PSA), Dschang, Cameroun, depuis 2014 : plants et semences, fertilisants et protecteurs des cultures, tisanes et miel, formations, prestations agricoles et rurales, naturopathie."
   },
 
   nav: {
+    order: 'Commander',
     produits: 'Produits & Services',
     apropos: 'À propos',
+    partenaires: 'Partenaires',
+    actions: 'Actions sociales',
+    mediatheque: 'Médiathèque',
     sante: 'Alimentation & Santé',
     blog: 'Blog',
     contact: 'Contact',
@@ -15,6 +20,22 @@ export default {
     cta: 'Commander sur WhatsApp',
     menu: 'Menu',
     lang: 'Langue'
+  },
+
+  brand: {
+    name: "Pépinière Semences d'Avenir",
+    short: 'PSA'
+  },
+
+  home: {
+    secteursTitlePre: 'Quatre métiers, ',
+    secteursTitleEm: 'une même racine.',
+    produitsTitlePre: 'Du semis ',
+    produitsTitleEm: 'à la table.',
+    pourquoiKicker: 'Pourquoi PSA',
+    temoignagesKicker: 'Témoignages',
+    actusKicker: 'Journal',
+    scanKicker: 'Restons connectés'
   },
 
   common: {
@@ -26,23 +47,61 @@ export default {
     inStock: 'En stock',
     order: 'Commander {name}',
     readArticle: "Lire l'article",
-    readAlso: 'À lire aussi'
+    readAlso: 'À lire aussi',
+    copy: 'Copier',
+    copied: 'Copié !',
+    close: 'Fermer',
+    open: 'Ouvrir'
   },
 
   hero: {
-    name: "Semences d'Avenir",
+    imageAlt: 'Agriculteur entretenant ses cultures dans un champ verdoyant',
+    eyebrow: 'Dschang · Ouest-Cameroun — depuis 2014',
+    discover: 'Découvrir nos produits',
+    scroll: 'Défiler',
+    name: "Pépinière Semences d'Avenir",
+    short: '(PSA)',
     badge1: 'Activité semencière certifiée',
     badge2: 'Agriculture biologique',
     tagline: "L'assurance d'une réussite agricole et rurale, du semis à la récolte.",
     cta: 'Commander sur WhatsApp'
   },
 
-  offres: [
-    { heading: 'Semences certifiées', text: 'Activité semencière agréée MINADER' },
-    { heading: 'Agriculture bio', text: 'Certificat de conformité biologique' },
-    { heading: 'Projets agricoles', text: 'Conception, mise en œuvre, évaluation' },
-    { heading: 'Formations', text: 'Ateliers pratiques & stagiaires' }
-  ],
+  secteurs: {
+    titlePre: 'Nos ',
+    titleEm: "secteurs d'activités",
+    items: [
+      {
+        heading: 'Agriculture et environnement',
+        text: 'Plants, semences et intrants écologiques pour une agriculture durable.'
+      },
+      {
+        heading: 'Développement rural',
+        text: "Prestations agricoles et appui aux projets d'aménagement rural."
+      },
+      {
+        heading: 'Alimentation et santé au naturel',
+        text: 'Tisanes, miel, naturopathie et alimentation saine.'
+      },
+      {
+        heading: 'Formation en entrepreneuriat',
+        text: 'Stages, formations pratiques et insertion professionnelle.'
+      }
+    ]
+  },
+
+  stats: {
+    since: 'Depuis',
+    year: '2014',
+    sinceText: "au service des producteurs du Cameroun et d'Afrique centrale.",
+    items: [
+      { value: '65', label: 'emplois créés' },
+      { value: '9 500 ha', label: 'hectares plantés' },
+      { value: '≈ 350', label: 'stagiaires formés' },
+      { value: '≈ 10 000', label: 'clients satisfaits' },
+      { value: '≈ 1 250', label: 'variétés cultivées' }
+    ]
+  },
 
   produitsTeaser: {
     titlePre: 'Nos ',
@@ -51,28 +110,60 @@ export default {
 
   categories: [
     {
-      titre: 'Semences vivrières',
-      texte: 'Maïs, haricot, arachide et autres cultures de base, à fort pouvoir germinatif.'
+      titre: 'Plants et semences',
+      accroche: 'Des bases solides pour des récoltes généreuses et durables.',
+      offre:
+        'Une sélection rigoureuse de semences paysannes, de graines horticoles et de plants vigoureux (maraîchers, fruitiers, ornementaux).',
+      engagement:
+        'Vous garantir un matériel végétal de qualité supérieure, parfaitement adapté aux conditions pédoclimatiques locales, pour maximiser vos chances de réussite dès la mise en terre.'
     },
     {
-      titre: 'Semences maraîchères',
-      texte: 'Tomate, piment, gombo, légumes-feuilles : des variétés productives et rustiques.'
+      titre: 'Fertilisants et protecteurs des cultures',
+      accroche: 'Nourrir la terre et protéger vos récoltes, naturellement.',
+      offre:
+        "Une gamme complète d'intrants écologiques, comprenant des fertilisants organiques (composts, biofertilisants, engrais verts, etc.) et des solutions de bioprotection contre les ravageurs et les maladies.",
+      engagement:
+        "Préserver la fertilité de vos sols et la santé de vos cultures tout en respectant l'environnement et la biodiversité, pour une agriculture saine et productive."
     },
     {
-      titre: 'Plants fruitiers & forestiers',
-      texte: 'Jeunes plants greffés et forestiers prêts à la mise en terre.'
+      titre: 'Tisanes de plantes médicinales et miel',
+      accroche: 'Les bienfaits de la nature concentrés pour votre bien-être.',
+      offre:
+        'Des infusions artisanales à base de plantes médicinales récoltées avec soin, ainsi que du miel pur et brut, riche en vertus thérapeutiques et nutritionnelles.',
+      engagement:
+        'Vous offrir des produits authentiques, 100 % naturels, pour renforcer votre système immunitaire, apaiser votre quotidien et prendre soin de votre santé par les plantes.'
     },
     {
-      titre: 'Fertilisants écologiques',
-      texte: 'Amendements organiques pour restaurer durablement la fertilité des sols.'
+      titre: 'Accompagnement des stagiaires et formations',
+      accroche: "Transmettre le savoir-faire pour cultiver l'avenir.",
+      offre:
+        "Des programmes de formation théorique et pratique (en agriculture, maraîchage, naturopathie ou transformation) ainsi qu'un encadrement personnalisé pour les stagiaires et porteurs de projets.",
+      engagement:
+        "Partager notre expertise terrain, renforcer vos compétences professionnelles et vous offrir un espace d'apprentissage immersif et formateur."
     },
     {
-      titre: 'Protecteurs naturels',
-      texte: 'Bio-protecteurs contre ravageurs et maladies, sans résidus de synthèse.'
+      titre: 'Prestations agricoles et rurales',
+      accroche: 'Un appui technique sur le terrain pour booster vos projets.',
+      offre:
+        "Des services sur mesure pour vos travaux agricoles et d'aménagement rural (labour, entretien de parcelles, mise en place de systèmes de culture, conseils techniques in situ).",
+      engagement:
+        'Mettre à votre disposition notre savoir-faire et nos équipements pour optimiser vos rendements et vous libérer des contraintes techniques les plus lourdes.'
     },
     {
-      titre: 'Services & accompagnement',
-      texte: 'Diagnostic, montage de projets, suivi technique de terrain et formations.'
+      titre: 'Consultation et suivi en naturopathie',
+      accroche: "Une approche holistique pour retrouver l'équilibre et la vitalité.",
+      offre:
+        'Des bilans de vitalité personnalisés, des conseils en hygiène de vie, en alimentation saine et en phytothérapie adaptés à votre profil.',
+      engagement:
+        "Vous accompagner pas à pas vers un mieux-être global en stimulant les capacités d'autoguérison de votre organisme grâce à des méthodes naturelles et préventives."
+    },
+    {
+      titre: 'Équipements agricoles et alimentation',
+      accroche: "S'équiper et nourrir efficacement pour réussir.",
+      offre:
+        "Du matériel et des petits outillages agricoles adaptés à vos besoins, ainsi que des solutions d'alimentation de qualité.",
+      engagement:
+        'Vous faciliter le travail au quotidien grâce à des équipements robustes et fonctionnels, tout en garantissant des apports nutritionnels adaptés.'
     }
   ],
 
@@ -114,8 +205,7 @@ export default {
       },
       {
         titre: 'Retrait & suivi',
-        texte:
-          'Récupérez votre commande à Dschang, avec les recommandations de mise en culture.'
+        texte: 'Récupérez votre commande à Dschang, avec les recommandations de mise en culture.'
       }
     ]
   },
@@ -131,20 +221,26 @@ export default {
 
   aproposTeaser: {
     kicker: 'À propos & garanties',
-    title: 'Une structure certifiée, au service du monde agricole et rural',
-    para: "Basée au Carrefour des semences à Dschang, PSA fournit des plants et semences de qualité, des fertilisants écologiques et accompagne les projets agricoles et ruraux.",
+    title: "Une entreprise ancrée dans les réalités de l'Afrique centrale",
+    para: 'Basée au Carrefour des semences à Dschang depuis 2014, PSA fournit des plants et semences de qualité, des intrants écologiques et accompagne les projets agricoles et ruraux.',
     cta: 'Voir nos certifications'
   },
 
   certifs: [
-    { titre: 'Identifiant unique (NIU)', texte: 'PO39612653286J — structure enregistrée et identifiée.' },
+    {
+      titre: 'Identifiant unique (NIU)',
+      texte: 'PO39612653286J — structure enregistrée et identifiée.'
+    },
     { titre: 'Registre de commerce', texte: 'RC/BFM/A/486 — activité légalement immatriculée.' },
     {
       titre: 'Activité semencière (MINADER)',
       texte:
-        "Certificat d'exercice de l'activité semencière délivré par le Ministère de l'Agriculture."
+        "Certificat d'exercice de l'activité semencière délivré par le Ministère de l'Agriculture et du Développement Rural."
     },
-    { titre: 'Agriculture biologique', texte: 'Certificat de conformité en agriculture biologique.' },
+    {
+      titre: 'Agriculture biologique',
+      texte: 'Certificat de conformité en agriculture biologique.'
+    },
     {
       titre: 'Garantie SPG ETSO MBONG',
       texte: 'Système participatif de garantie reconnu localement.'
@@ -161,7 +257,7 @@ export default {
   santeTeaser: {
     kicker: 'Plan Santé Assurée',
     title: 'Alimentation & santé naturelle',
-    para: "Produits de la ruche, plantes médicinales, charbon végétal actif (CHARVAS) et petits équipements — avec conseils et accompagnement.",
+    para: 'Tisanes de plantes médicinales, miel pur, consultation et suivi en naturopathie, équipements et solutions d’alimentation — avec conseils et accompagnement.',
     cta: 'Découvrir le volet santé'
   },
 
@@ -172,7 +268,7 @@ export default {
         nom: 'Coopérative agricole',
         role: 'Menoua',
         texte:
-          "Des semences fiables et un vrai suivi. Nos rendements se sont nettement améliorés dès la première campagne."
+          'Des semences fiables et un vrai suivi. Nos rendements se sont nettement améliorés dès la première campagne.'
       },
       {
         nom: 'Jeune exploitant',
@@ -202,19 +298,19 @@ export default {
         nom: 'Planteur',
         role: 'Santchou',
         texte:
-          "Le charbon végétal et les tisanes marchent très bien à la maison. Le volet santé est un vrai plus."
+          'Le charbon végétal et les tisanes marchent très bien à la maison. Le volet santé est un vrai plus.'
       },
       {
         nom: 'Groupe de femmes',
         role: 'Fongo-Tongo',
         texte:
-          "Formation claire et pratique. Nous avons lancé notre propre pépinière de village grâce à eux."
+          'Formation claire et pratique. Nous avons lancé notre propre pépinière de village grâce à eux.'
       },
       {
         nom: 'Exploitant fruitier',
         role: 'Penka-Michel',
         texte:
-          "Des plants greffés de qualité et un vrai conseil sur les variétés. Retrait au carrefour, très pratique."
+          'Des plants greffés de qualité et un vrai conseil sur les variétés. Retrait au carrefour, très pratique.'
       }
     ]
   },
@@ -222,7 +318,60 @@ export default {
   partenaires: {
     kicker: 'Nos partenaires',
     title: 'Partenaires techniques & institutionnels',
-    para: "PSA travaille aux côtés d'ONG, de bailleurs, de coopératives et d'institutions du développement agricole et rural."
+    para: "PSA travaille aux côtés d'institutions publiques, d'universités, d'ONG, de bailleurs et d'entreprises du développement agricole et rural.",
+    cta: 'Voir tous nos partenaires'
+  },
+
+  partenairesPage: {
+    title: 'Nos partenaires',
+    subtitle: 'Institutions, universités, ONG et entreprises qui avancent avec nous.',
+    instKicker: 'Partenaires institutionnels',
+    instTitle: 'Ils soutiennent notre action',
+    techKicker: 'Partenaires techniques',
+    techTitle: 'Ils travaillent à nos côtés sur le terrain',
+    becomeTitle: 'Devenir partenaire',
+    becomeText:
+      'Vous portez un projet agricole, rural ou de formation ? Construisons ensemble des solutions durables.',
+    becomeCta: 'Nous contacter'
+  },
+
+  scan: {
+    kicker: 'Scanner pour nous retrouver',
+    title: 'Onze accès directs vers nos services et plateformes',
+    para: 'Scannez un QR code avec votre téléphone ou cliquez sur une carte pour ouvrir le lien.',
+    catalogTitle: 'Notre catalogue en ligne',
+    catalogText:
+      'Tous nos produits et prix à jour dans la boutique WhatsApp de Pépinière Semences d’Avenir.',
+    catalogCta: 'Ouvrir le catalogue',
+    scanMe: 'Scannez-moi',
+    directTitle: 'Contact direct',
+    directPlace: 'Carrefour des semences, Dschang — Ouest-Cameroun'
+  },
+
+  channels: {
+    email: 'E-mail',
+    boutique: 'Boutique en ligne',
+    graines: 'Site des graines',
+    plantes: 'Site des plantes',
+    facebook: 'Facebook',
+    youtube: 'YouTube',
+    tiktok: 'TikTok',
+    x: 'X',
+    linkedin: 'LinkedIn',
+    telegram: 'Telegram',
+    whatsapp: 'WhatsApp'
+  },
+
+  newsletter: {
+    title: "S'inscrire à la newsletter",
+    text: 'Recevez nos conseils de saison, nouveautés et offres de formation.',
+    placeholder: 'Votre adresse email',
+    button: "S'inscrire",
+    invalid: 'Adresse email invalide.',
+    subject: 'Inscription à la newsletter',
+    body: "Bonjour, merci de m'inscrire à la newsletter de Pépinière Semences d'Avenir avec l'adresse : {email}",
+    sent: 'Merci ! Votre inscription est confirmée — un email de bienvenue vous a été envoyé.',
+    error: 'L’inscription a échoué. Réessayez dans un instant.'
   },
 
   actus: {
@@ -237,7 +386,8 @@ export default {
     para: 'Notre équipe vous répond par WhatsApp, téléphone ou email.',
     whatsapp: 'Commander sur WhatsApp',
     contact: 'Nous contacter',
-    countLabel: 'Producteurs et coopératives nous font déjà confiance'
+    count: '10k',
+    countLabel: 'Clients satisfaits depuis 2014'
   },
 
   faq: {
@@ -250,62 +400,67 @@ export default {
     cta: 'Nous contacter',
     items: [
       {
-        q: 'Quels produits proposez-vous ?',
-        a: "Semences vivrières et maraîchères, plants fruitiers et forestiers, fertilisants et protecteurs écologiques, et un volet Alimentation & Santé (miel, tisanes, CHARVAS, équipements)."
+        q: 'Quels produits et services proposez-vous ?',
+        a: 'Plants et semences, fertilisants et protecteurs des cultures, tisanes de plantes médicinales et miel, équipements agricoles et alimentation — ainsi que des formations, des prestations agricoles et rurales et des consultations en naturopathie.'
       },
       {
         q: 'Comment passer commande ?',
-        a: "Contactez-nous par WhatsApp, téléphone ou via le formulaire. Nous vous conseillons les variétés adaptées, établissons un devis, puis vous retirez la commande au Carrefour des semences à Dschang."
+        a: 'Consultez notre boutique en ligne sur WhatsApp, puis contactez-nous par WhatsApp, téléphone ou via le formulaire. Nous vous conseillons les variétés adaptées, établissons un devis, puis vous retirez la commande au Carrefour des semences à Dschang.'
       },
       {
         q: 'Quels moyens de paiement acceptez-vous ?',
         a: 'Espèces sur place, ou Mobile Money (MTN MoMo / Orange Money).'
       },
       {
+        q: 'Recevez-vous des stagiaires ?',
+        a: 'Oui. Depuis 2014, nous avons accueilli et encadré gratuitement environ 350 stagiaires : pépinière, maraîchage, production semencière, naturopathie et transformation. Envoyez votre candidature depuis la page « Stages & formation ».'
+      },
+      {
         q: 'Accompagnez-vous les projets agricoles ?',
-        a: "Oui : diagnostic, conception, mise en œuvre et évaluation de projets agricoles et ruraux, pour les particuliers, coopératives, ONG et bailleurs. Nous accueillons aussi des stagiaires."
+        a: 'Oui : diagnostic, conception, mise en œuvre et suivi de projets agricoles et ruraux, pour les particuliers, coopératives, ONG et bailleurs.'
       },
       {
         q: 'Où êtes-vous situés ?',
-        a: "Au Carrefour des semences, à Dschang, dans la région de l'Ouest du Cameroun."
+        a: "Au Carrefour des semences, à Dschang, dans la région de l'Ouest du Cameroun. Nos sites des graines et des plantes sont localisés sur Google Maps (voir la page Contact)."
       }
     ]
   },
 
   footer: {
+    tagline: "Pensons et semons l'avenir.",
+    navTitle: 'Navigation',
+    contactTitle: 'Contact',
+    followTitle: 'Suivez-nous',
+    backTop: 'Haut de page',
     minader: 'MINADER',
     minaderDesc: "Certificat d'exercice de l'activité semencière",
     bio: 'BIO',
     bioDesc: 'Certificat de conformité en agriculture biologique',
-    rights: 'Pépinière Semences d’Avenir',
+    rights: 'Pépinière Semences d’Avenir (PSA)',
     stats: [
-      { label: 'variétés de semences & plants' },
-      { label: 'années au service des producteurs' },
-      { label: 'lots suivis et contrôlés' }
+      { value: '2014', label: 'année de création' },
+      { value: '≈ 10 000', label: 'clients satisfaits' },
+      { value: '≈ 1 250', label: 'variétés cultivées' }
     ]
   },
 
   produitsPage: {
     title: 'Produits & Services',
     subtitle:
-      "Des plants et semences certifiés aux intrants écologiques et à l'accompagnement de projets.",
-    servicesKicker: 'Accompagnement',
-    servicesTitle: "Services agricoles & ruraux, de l'idée au bilan",
-    servicesList: [
-      'Diagnostic et conseil technique sur le terrain',
-      'Conception et montage de projets agricoles et ruraux',
-      'Mise en œuvre, suivi et évaluation',
-      'Formations pratiques et accueil de stagiaires'
-    ],
-    servicesCta: 'Voir notre démarche',
-    fDevisTitle: 'Devis envoyé',
-    fDevisName: 'Projet maraîcher',
-    fDevisAgo: 'Il y a 2h',
-    fAlert: 'Nouveau lot de semences !',
-    fProjectsTitle: 'Projets accompagnés',
-    fProjectsYear: 'cette année',
-    catalogCtaTitle: 'Consultez le catalogue complet sur WhatsApp',
-    openCatalogAgri: 'Ouvrir le catalogue Agriculture',
+      'Plants, semences, intrants écologiques, alimentation et santé au naturel, formations et prestations sur le terrain.',
+    bannerAlt: "Produits Pépinière Semences d'Avenir : biofertilisant MU BOOST et compost naturel",
+    introKicker: 'Nos 7 catégories',
+    introTitle: 'Tout pour réussir, du semis à la table',
+    offre: 'Ce que nous proposons',
+    engagement: 'Notre engagement',
+    ctaOrder: 'Voir le catalogue',
+    ctaStage: 'Postuler pour un stage',
+    ctaContact: 'Demander un rendez-vous',
+    santeKicker: 'Alimentation & Santé',
+    santeTitle: 'Le volet « Plan Santé Assurée »',
+    santeText:
+      'Tisanes, miel, naturopathie, CHARVAS et équipements : découvrez notre offre dédiée au bien-être.',
+    santeCta: 'Découvrir le volet santé',
     catalogCta: {
       titlePre: 'Consultez le catalogue complet ',
       titleEm: 'sur WhatsApp',
@@ -314,87 +469,223 @@ export default {
       paraMid: ' avec des ',
       paraEm2: 'conseils personnalisés',
       paraPost: ' selon votre exploitation.',
-      button: 'Ouvrir le catalogue Agriculture',
+      button: 'Ouvrir la boutique en ligne',
       buttonSecondary: 'Nous contacter',
-      infoTitle: 'Comment ça marche ?',
-      info1: 'Écrivez-nous sur WhatsApp',
-      info2: 'Recevez la liste et les prix à jour',
-      info3: 'Validez votre commande au Carrefour des semences'
+      infoTitle: 'Scannez pour ouvrir le catalogue'
     }
   },
 
   aproposPage: {
-    title: 'À propos & garanties',
-    subtitle: 'Une structure certifiée, au service du monde agricole et rural.',
+    title: 'À propos',
+    subtitle: "Une entreprise ancrée dans les réalités de l'Afrique centrale.",
     whoKicker: 'Qui sommes-nous ?',
-    whoTitle: "Une pépinière ancrée dans le terroir de l'Ouest",
+    whoTitle: "Une entreprise ancrée dans les réalités de l'Afrique centrale",
     whoPara:
-      "Basée au Carrefour des semences à Dschang, Pépinière Semences d'Avenir fournit des plants et semences de qualité, des fertilisants et protecteurs écologiques, et accompagne les projets agricoles et ruraux — avec, en complément, le volet « Plan Santé Assurée ».",
+      "Basée au Carrefour des semences à Dschang, Pépinière Semences d'Avenir produit et distribue des plants et semences de qualité, des fertilisants et protecteurs des cultures, accompagne les projets agricoles et ruraux, forme les jeunes et les producteurs, et propose un volet Alimentation & Santé au naturel.",
     whoList: [
       "Semences produites sous certificat d'activité semencière (MINADER)",
       'Conformité en agriculture biologique',
       'Accompagnement de projets et formations sur le terrain',
-      'Volet Alimentation & Santé naturelle'
+      'Alimentation et santé au naturel'
     ],
-    yearsExp: "années d'expérience",
-    mission: 'Mission',
-    missionText:
-      "Sécuriser la réussite des exploitations par des intrants fiables et un accompagnement de proximité.",
-    values: 'Valeurs',
-    valuesText: 'Qualité, transparence, respect des sols et proximité avec les producteurs.',
-    certsKicker: 'Certifications & références officielles',
+    since: 'Depuis',
+    sinceLabel: 'au service des producteurs',
+    visionTitle: 'Vision',
+    vision: [
+      "Devenir, à l'horizon 2030, une entreprise de référence dans la production de plants et de semences de haute qualité ainsi que dans l'accompagnement à la création de vergers performants et durables au Cameroun et en Afrique centrale.",
+      "Pépinière Semences d'Avenir ambitionne de contribuer à une agriculture plus productive, rentable et respectueuse de l'environnement, dans laquelle chaque producteur dispose d'un matériel végétal fiable et d'un accompagnement technique adapté."
+    ],
+    missionTitle: 'Mission',
+    mission:
+      'Fournir aux agriculteurs, entrepreneurs, organisations et projets de développement des plants, des semences et des services agricoles capables d’améliorer durablement leurs performances.',
+    missionIntro: "Pour accomplir cette mission, Pépinière Semences d'Avenir s'engage à :",
+    missionList: [
+      'produire et commercialiser des plants fruitiers greffés, sélectionnés et adaptés aux conditions locales ;',
+      'produire et distribuer des semences agricoles de qualité ;',
+      "accompagner la conception, l'installation, l'entretien et le suivi des vergers ;",
+      "conseiller les producteurs sur la plantation, la fertilisation, l'irrigation et la protection phytosanitaire ;",
+      "former les jeunes, les agriculteurs et les entrepreneurs aux métiers de la pépinière, de la production semencière et de l'agriculture durable ;",
+      "faciliter l'accès aux intrants, aux innovations et aux solutions techniques nécessaires à la réussite des exploitations agricoles."
+    ],
+    valuesKicker: 'Nos valeurs',
+    valuesTitle: 'Les principes qui nous guident',
+    valuesIntro:
+      'Ces principes orientent nos décisions, nos méthodes de travail et nos relations avec les clients, les partenaires, les collaborateurs et les communautés.',
+    values: [
+      {
+        titre: 'Respect des engagements',
+        texte:
+          'Nous plaçons la parole donnée, la ponctualité, la qualité des livraisons et la satisfaction du client au cœur de nos relations professionnelles.'
+      },
+      {
+        titre: 'Transparence',
+        texte:
+          "Nous communiquons de manière claire sur l'origine, les caractéristiques, la qualité, les conditions d'utilisation et les performances attendues de nos produits et services."
+      },
+      {
+        titre: 'Efficience',
+        texte:
+          "Nous recherchons la meilleure utilisation possible des ressources humaines, matérielles, naturelles et financières afin d'obtenir des résultats durables à un coût maîtrisé."
+      },
+      {
+        titre: 'Inclusion',
+        texte:
+          'Nous travaillons avec les petits producteurs, les exploitations commerciales, les jeunes, les femmes, les organisations paysannes, les entreprises et les projets de développement, sans discrimination.'
+      },
+      {
+        titre: 'Qualité',
+        texte:
+          'Nous accordons une attention particulière à la sélection du matériel végétal, à la traçabilité, à la vigueur des plants et au suivi de leur réussite après la plantation.'
+      },
+      {
+        titre: 'Innovation',
+        texte:
+          'Nous expérimentons, adaptons et diffusons des techniques capables d’améliorer la production des plants, des semences et des vergers dans les conditions tropicales africaines.'
+      }
+    ],
+    opportunity: 'Nous sommes une opportunité pour vous.',
+    certsKicker: 'Certificat et références',
     certsTitle: 'Des garanties qui attestent du sérieux de la structure',
-    badgeMinader: 'MINADER',
-    badgeMinaderSub: 'Agrément semencier',
-    badgeBio: 'Agriculture biologique'
+    certImageAlt:
+      "Certificat d'exercice de l'activité semencière délivré à Pépinière Semences d'Avenir par le MINADER",
+    certImageCaption:
+      "Certificat d'exercice de l'activité semencière (MINADER) — cliquez pour agrandir"
   },
 
   team: {
     hiring: 'ON RECRUTE →',
     titlePre: "L'équipe derrière",
     titleEm: 'vos semences et plants',
-    para: "Une équipe pluridisciplinaire réunissant agronomes, techniciens et gestionnaires — au service des producteurs de la région de l'Ouest.",
+    para: 'Une équipe pluridisciplinaire réunissant ingénieurs, techniciens de pépinière, laborantins et gestionnaires — au service des producteurs.',
+    groupAlt: "Photo de groupe de l'équipe de Pépinière Semences d'Avenir",
     members: [
-      { nom: 'Jules Kamdem', poste: 'Directeur général' },
-      { nom: 'Marlène Ngassa', poste: 'Directrice technique' },
-      { nom: 'Odile Fotso', poste: 'Responsable qualité' },
-      { nom: 'Christelle Nono', poste: 'Responsable commerciale' },
-      { nom: 'Bertrand Tchoua', poste: 'Chef de pépinière' },
-      { nom: 'Aïcha Djeukam', poste: 'Responsable formations' },
-      { nom: 'Solange Mefire', poste: 'Responsable Plan Santé Assurée' },
-      { nom: 'Patrice Wandji', poste: 'Agronome en chef' },
-      { nom: 'Hervé Kenfack', poste: 'Technicien agricole' },
-      { nom: 'Nadège Talla', poste: 'Chargée des partenariats' },
-      { nom: 'Steve Fongang', poste: 'Coordinateur logistique' }
+      { nom: 'Ing. NANFACK TSAFOUET Magellan', poste: 'Directeur général et commercial' },
+      { nom: 'TCHIDA SAWA Merveille', poste: 'Responsable du laboratoire de phytothérapie' },
+      { nom: 'CHEWA Donald', poste: 'Chef service marketing et commercial' },
+      { nom: 'WOUMO Ornella', poste: 'Assistante de direction' },
+      { nom: 'DONGMO Elisabeth', poste: "Chef service d'hygiène et de salubrité" },
+      { nom: 'NODEM Nelie', poste: 'Responsable du laboratoire des semences d’avenir' },
+      {
+        nom: 'MEGHEHO Stevine',
+        poste: 'Stagiaire au service de consultation et de suivi en naturopathie'
+      },
+      {
+        nom: 'MATTA KAMDEM Ingrid',
+        poste:
+          'Responsable de la pépinière du site MINADER et du laboratoire Phyto-Solutions d’Avenir'
+      },
+      { nom: 'ALOKENG NGUOUADJIO Carlos', poste: 'Responsable de la pépinière du site de Tsinfem' },
+      { nom: 'YOUDOM Ronald', poste: 'Assistant à la pépinière' },
+      { nom: 'DLOUATSA Theresa', poste: 'Responsable de la boutique PER ANKH' },
+      { nom: 'TONFACK Cyrielle', poste: 'Chef service comptable et financier' }
     ]
+  },
+
+  actionsPage: {
+    metaTitle: "Nos actions sociales — Pépinière Semences d'Avenir",
+    title: 'Nos actions sociales',
+    subtitle: 'Semer la solidarité autant que les graines.',
+    kicker: 'Engagement communautaire',
+    heading: 'Ce que nous faisons pour les communautés',
+    items: [
+      {
+        value: '1,2 t',
+        titre: 'Dons de semences et de plants',
+        texte:
+          'Plus de 1,2 tonne de semences et de nombreux plants offerts à des producteurs, groupements et communautés.'
+      },
+      {
+        value: '350',
+        titre: 'Accueil et encadrement gratuit des stagiaires',
+        texte:
+          'Environ 350 stagiaires accueillis et encadrés gratuitement sur nos sites de production.'
+      },
+      {
+        value: '65',
+        titre: "Accompagnement à l'insertion socio-professionnelle",
+        texte:
+          "Appui aux jeunes et aux femmes pour s'insérer dans les métiers agricoles — 65 emplois créés à ce jour."
+      }
+    ],
+    appeal: 'Nous avons besoin de votre soutien pour continuer ces actions.',
+    donTitle: 'Faire un don',
+    donText:
+      'Chaque contribution, même modeste, finance des semences, des plants et l’encadrement de jeunes.',
+    momo: 'MTN Mobile Money (MoMo)',
+    om: 'Orange Money (OM)',
+    bank: 'Virement bancaire (RIB)',
+    rib: {
+      codeBanque: 'Code banque',
+      codeGuichet: 'Code guichet',
+      compte: 'Numéro de compte',
+      cle: 'Clé RIB',
+      swift: 'Code SWIFT',
+      iban: 'Code IBAN'
+    },
+    thanks: 'Après votre don, écrivez-nous sur WhatsApp pour que nous puissions vous remercier.',
+    thanksCta: 'Nous prévenir sur WhatsApp',
+    waMessage: "Bonjour, je viens d'effectuer un don pour soutenir vos actions sociales."
+  },
+
+  mediatheque: {
+    metaTitle: "Bibliothèque & médiathèque — Pépinière Semences d'Avenir",
+    title: 'Bibliothèque & médiathèque',
+    subtitle: 'Documents, photos et vidéos de Pépinière Semences d’Avenir.',
+    tabs: { docs: 'Documents', photos: 'Photos', videos: 'Vidéos' },
+    docs: [
+      {
+        titre: "Certificat d'exercice de l'activité semencière",
+        texte: 'Délivré par le MINADER (juin 2023).'
+      },
+      {
+        titre: 'Scanner pour nous retrouver',
+        texte: 'Fiche des onze QR codes de nos services et plateformes.'
+      },
+      {
+        titre: 'Les entreprises du groupe',
+        texte: '« Pensons et semons l’avenir » — les structures sœurs de PSA.'
+      }
+    ],
+    openDoc: 'Ouvrir',
+    photos: [
+      "L'équipe de Pépinière Semences d'Avenir",
+      'Prestations agricoles sur le terrain',
+      'Plants et semences',
+      'Fertilisants et protecteurs des cultures : MU BOOST et compost naturel'
+    ],
+    videosTitle: 'Nos vidéos',
+    videosText:
+      'Reportages, tutoriels et coulisses de la pépinière : retrouvez toutes nos vidéos sur nos chaînes.',
+    youtubeCta: 'Voir la chaîne YouTube',
+    tiktokCta: 'Voir sur TikTok'
   },
 
   santePage: {
     title: 'Alimentation & Santé naturelle',
-    subtitle: '« Plan Santé Assurée » — un volet complémentaire dédié au bien-être.',
+    subtitle: '« Plan Santé Assurée » — un volet dédié au bien-être.',
     para2Title: 'Des produits sains, des conseils avisés',
     para2:
-      'Produits de la ruche, plantes médicinales, charbon végétal actif et petits équipements — avec conseils et accompagnement personnalisés.',
+      'Tisanes de plantes médicinales, miel, charbon végétal actif, consultation en naturopathie et équipements — avec conseils et accompagnement personnalisés.',
     ctaCatalog: 'Catalogue Alimentation & Santé',
     whatTitle: 'Ce que propose le volet santé',
     produits: [
-      { titre: 'Miel naturel', texte: 'Miel récolté localement, non transformé.' },
+      { titre: 'Miel naturel', texte: 'Miel pur et brut, récolté localement.' },
       {
         titre: 'Tisanes de plantes médicinales',
-        texte: 'Mélanges de plantes séchées pour le bien-être au quotidien.'
+        texte: 'Infusions artisanales de plantes récoltées avec soin.'
       },
       {
         titre: 'CHARVAS — charbon végétal actif',
         texte: "Charbon végétal actif pour un usage alimentaire et d'hygiène."
       },
       {
-        titre: 'Équipements alimentaires & sanitaires',
-        texte: 'Petits équipements et conseils pour une alimentation plus saine.'
+        titre: 'Équipements & alimentation',
+        texte: 'Petits équipements et solutions pour une alimentation plus saine.'
       }
     ],
     splitAgriTitle: 'CATALOGUE AGRICULTURE',
     splitAgriText:
-      'Plants, semences vivrières et maraîchères, fertilisants et protecteurs écologiques.',
+      'Plants et semences, fertilisants et protecteurs des cultures, équipements agricoles.',
     splitSanteTitle: 'ALIMENTATION & SANTÉ',
     splitSanteText:
       'Miel, tisanes de plantes médicinales, charbon végétal actif (CHARVAS) et équipements.',
@@ -403,8 +694,7 @@ export default {
 
   blogPage: {
     title: 'Le blog de la pépinière',
-    subtitle:
-      "Conseils pratiques, fiches techniques et actualités de Pépinière Semences d'Avenir."
+    subtitle: "Conseils pratiques, fiches techniques et actualités de Pépinière Semences d'Avenir."
   },
 
   blogPost: {
@@ -420,6 +710,8 @@ export default {
   contact: {
     locate: 'Nous situer',
     locateText: 'Carrefour des semences, Dschang.',
+    seeGraines: 'Site des graines',
+    seePlantes: 'Site des plantes',
     phone: 'Téléphone / WhatsApp',
     phoneText: 'Du lundi au samedi.',
     email: 'Email',
@@ -433,7 +725,10 @@ export default {
     sendEmail: 'Envoyer par email',
     sendWhatsapp: 'WhatsApp',
     mailtoSubject: 'Contact site web — {name}',
-    sent: 'Merci ! Votre messagerie va s’ouvrir avec le message pré-rempli.'
+    sending: 'Envoi en cours…',
+    sent: 'Merci ! Votre message a bien été envoyé. Une confirmation vous a été adressée par email.',
+    error: 'L’envoi a échoué. Réessayez, ou écrivez-nous directement :',
+    errorEmail: 'par email',
   },
 
   validation: {
@@ -455,7 +750,7 @@ export default {
   stage: {
     metaTitle: "Stages & formation — Pépinière Semences d'Avenir",
     metaDesc:
-      "Rejoignez nos formations pratiques : candidatez pour un stage en pépinière, maraîchage, fertilité des sols ou gestion de projet agricole à Dschang.",
+      'Rejoignez nos formations pratiques : candidatez pour un stage en pépinière, maraîchage, fertilité des sols ou gestion de projet agricole à Dschang.',
     title: 'Stages & formation',
     subtitle: 'Apprenez le métier sur le terrain, aux côtés de nos équipes.',
     introKicker: 'Encadrement des stagiaires',
@@ -510,9 +805,8 @@ export default {
     ],
     fCvFile: 'Votre CV (PDF ou Word)',
     fCvFileHint: 'Glissez-déposez votre fichier ici, ou cliquez pour le choisir',
-    fCvFileNote:
-      "Ce fichier ne peut pas être joint automatiquement à l'email qui s'ouvrira — pensez à l'ajouter vous-même en pièce jointe, ou indiquez un lien de téléchargement ci-dessous.",
-    fCvFileTooBig: 'Fichier trop volumineux (5 Mo maximum).',
+    fCvFileNote: 'Votre CV est transmis avec votre candidature (PDF, DOC ou DOCX, 4 Mo max).',
+    fCvFileTooBig: 'Fichier trop volumineux (4 Mo maximum).',
     fCvFileBadType: 'Formats acceptés : PDF, DOC, DOCX.',
     fCvFileRemove: 'Retirer le fichier',
     fCv: 'Lien vers votre CV (alternative)',
@@ -527,7 +821,10 @@ export default {
     submitWa: 'Envoyer via WhatsApp',
     mailSubject: 'Candidature stage — {name}',
     waIntro: 'Bonjour, je souhaite candidater pour un stage :',
-    sent: 'Merci ! Votre messagerie va s’ouvrir avec votre candidature pré-remplie.',
+    sending: 'Envoi en cours…',
+    sent: 'Merci ! Votre candidature a bien été envoyée. Une confirmation vous a été adressée par email.',
+    error: 'L’envoi a échoué. Réessayez, ou envoyez votre candidature via WhatsApp ci-dessous.',
+    errorTooBig: 'Le CV dépasse 4 Mo : retirez-le et indiquez plutôt un lien de téléchargement.',
     cta: {
       titlePre: 'Vous voulez apprendre ',
       titleEm: 'le métier sur le terrain',
@@ -552,7 +849,7 @@ export default {
       categorie: 'Conseils pépinière',
       date: '12 mars 2026',
       extrait:
-        "Substrat, ombrage, calendrier de semis : les gestes clés pour des plants vigoureux dès les premières pluies.",
+        'Substrat, ombrage, calendrier de semis : les gestes clés pour des plants vigoureux dès les premières pluies.',
       corps: [
         {
           type: 'p',
@@ -581,11 +878,11 @@ export default {
       categorie: 'Semences',
       date: '3 février 2026',
       extrait:
-        "Altitude, type de sol, pression des maladies, débouché commercial : les critères pour bien choisir ses variétés.",
+        'Altitude, type de sol, pression des maladies, débouché commercial : les critères pour bien choisir ses variétés.',
       corps: [
         {
           type: 'p',
-          text: "Toutes les variétés ne se valent pas selon le contexte. Un choix raisonné limite les risques et améliore le rendement."
+          text: 'Toutes les variétés ne se valent pas selon le contexte. Un choix raisonné limite les risques et améliore le rendement.'
         },
         { type: 'h', text: 'Connaître son milieu' },
         {
@@ -595,12 +892,12 @@ export default {
         { type: 'h', text: 'Regarder la tolérance aux maladies' },
         {
           type: 'p',
-          text: "Privilégiez les variétés tolérantes aux maladies fréquentes localement : cela réduit les traitements et sécurise la production."
+          text: 'Privilégiez les variétés tolérantes aux maladies fréquentes localement : cela réduit les traitements et sécurise la production.'
         },
         { type: 'h', text: 'Penser au débouché' },
         {
           type: 'p',
-          text: "Calibre, couleur, conservation : la variété idéale dépend aussi de votre marché. Parlez-nous de votre projet, nous vous orientons vers les semences certifiées les plus adaptées."
+          text: 'Calibre, couleur, conservation : la variété idéale dépend aussi de votre marché. Parlez-nous de votre projet, nous vous orientons vers les semences certifiées les plus adaptées.'
         }
       ]
     },
@@ -610,11 +907,11 @@ export default {
       categorie: 'Fertilité des sols',
       date: '18 janvier 2026',
       extrait:
-        "Compost, engrais verts et amendements : une approche durable pour restaurer la fertilité sans épuiser la terre.",
+        'Compost, engrais verts et amendements : une approche durable pour restaurer la fertilité sans épuiser la terre.',
       corps: [
         {
           type: 'p',
-          text: "Des sols fatigués donnent des cultures fragiles. La fertilisation organique nourrit à la fois la plante et la vie du sol."
+          text: 'Des sols fatigués donnent des cultures fragiles. La fertilisation organique nourrit à la fois la plante et la vie du sol.'
         },
         { type: 'h', text: 'Le compost, base de tout' },
         {

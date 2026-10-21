@@ -1,37 +1,12 @@
 <script>
-  import { _, json } from 'svelte-i18n';
-  import { z } from 'zod';
-  import { isValidPhoneNumber } from 'libphonenumber-js';
+  import { _, json, locale } from 'svelte-i18n';
   import { superForm, defaults } from 'sveltekit-superforms';
   import { zod4 } from 'sveltekit-superforms/adapters';
-  import { EMAIL, wa } from './data.js';
+  import { wa } from './data.js';
+  import { internshipSchema as schema } from './schemas.js';
   import PhoneInput from './PhoneInput.svelte';
   import FileDropzone from './FileDropzone.svelte';
 
-  const schema = z.object({
-    nom: z.string().min(2, 'validation.nomMin'),
-    email: z.string().email('validation.emailInvalid'),
-    tel: z
-      .string()
-      .min(1, 'validation.telRequired')
-      .refine((v) => isValidPhoneNumber(v || ''), 'validation.telInvalid'),
-    ville: z.string().optional().default(''),
-    niveau: z.string().min(2, 'validation.niveauMin'),
-    etablissement: z.string().optional().default(''),
-    experience: z.string().optional().default(''),
-    domaine: z.string().default(''),
-    competences: z.string().optional().default(''),
-    langues: z.string().optional().default(''),
-    periode: z.string().optional().default(''),
-    source: z.string().default(''),
-    cv: z
-      .string()
-      .optional()
-      .default('')
-      .refine((v) => !v || /^https?:\/\//i.test(v), 'validation.cvUrl'),
-    motivation: z.string().min(20, 'validation.motivationMin'),
-    question: z.string().optional().default('')
-  });
 
   // Fields that belong to each step of the wizard (drives validation-before-advance
   // and is balanced so every step carries a similar amount of content).
@@ -46,11 +21,13 @@
   const domaines = $derived(/** @type {string[]} */ ($json('stage.domaines') || []));
   const sourceOptions = $derived(/** @type {string[]} */ ($json('stage.sourceOptions') || []));
   const stepLabels = $derived(/** @type {string[]} */ ($json('stage.steps') || []));
-  let done = $state(false);
+  // idle → sending → sent | error | tooBig  (emails go out through /api/candidature → Resend)
+  let status = $state(/** @type {'idle' | 'sending' | 'sent' | 'error' | 'tooBig'} */ ('idle'));
+  let honeypot = $state('');
   let step = $state(0);
 
-  // The CV file lives outside the form schema: there is no backend to receive
-  // it, so it is only used for a nicer UX + to remind the applicant of its name.
+  // The CV file lives outside the zod schema; it is sent as multipart form data
+  // alongside the fields and attached to the email by the server.
   let cvFile = $state(/** @type {File | null} */ (null));
   let cvFileError = $state('');
 
@@ -59,12 +36,22 @@
     validators: zod4(schema),
     validationMethod: 'auto',
     resetForm: false,
-    onUpdate({ form }) {
+    async onUpdate({ form }) {
       if (!form.valid) return;
-      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
-        $_('stage.mailSubject', { values: { name: form.data.nom || 'candidat' } })
-      )}&body=${encodeURIComponent(body(form.data))}`;
-      done = true;
+      status = 'sending';
+      const fd = new FormData();
+      for (const [k, v] of Object.entries(form.data)) fd.append(k, String(v ?? ''));
+      fd.append('lang', ($locale || 'fr').slice(0, 2));
+      fd.append('website', honeypot);
+      if (cvFile) fd.append('cvFile', cvFile, cvFile.name);
+      try {
+        const res = await fetch('/api/candidature', { method: 'POST', body: fd });
+        if (res.status === 413) return void (status = 'tooBig');
+        if (!res.ok) throw new Error(String(res.status));
+        status = 'sent';
+      } catch {
+        status = 'error';
+      }
     }
   });
 
@@ -121,31 +108,31 @@
     window.open(wa($_('stage.waIntro') + '\n\n' + body($form)), '_blank');
   }
 
-  // Exact "working-processed" input language: filled bg-n30 boxes, no border.
-  const fieldBase = 'w-full rounded-2xl bg-n30 p-3 outline-none';
+  // « Terroir » fields: paper boxes with a hairline border, moss focus ring.
+  const fieldBase = 'w-full rounded-2xl border border-ink/10 bg-paper px-4 py-3.5 outline-none';
   const iconFieldBase =
-    'flex items-center justify-start gap-3 rounded-2xl bg-n30 p-3 has-[input:focus]:ring-2 has-[input:focus]:ring-g400';
-  const iconInput = 'w-full bg-transparent outline-none placeholder:font-medium placeholder:text-n500';
-  const labelBase = 'block pb-2 font-medium text-n300';
+    'flex items-center justify-start gap-3 rounded-2xl border border-ink/10 bg-paper px-4 py-3.5 text-ink/50 has-[input:focus]:border-moss';
+  const iconInput = 'w-full bg-transparent text-ink outline-none placeholder:font-medium placeholder:text-ink/40';
+  const labelBase = 'block pb-2 text-xs font-bold uppercase tracking-[0.12em] text-ink/60';
   /** @param {unknown} err */
-  const ring = (err) => (err ? 'ring-2 ring-r300' : 'focus:ring-2 focus:ring-g400');
+  const ring = (err) => (err ? 'border-clay' : 'focus:border-moss');
   /** @param {string} current @param {string} value */
   const chip = (current, value) =>
-    `rounded-xl px-4 py-2.5 text-sm font-medium duration-300 ${
-      current === value ? 'bg-n900 text-white' : 'bg-n30 hover:bg-n900 hover:text-white'
+    `rounded-full px-4 py-2.5 text-sm font-semibold duration-300 ${
+      current === value ? 'bg-forest text-paper' : 'border border-ink/10 bg-paper hover:border-forest'
     }`;
 </script>
 
 <div class="grid grid-cols-12 items-start gap-6">
   <!-- Steps sidebar (working-processed design) -->
   <div class="col-span-12 md:col-span-4 xl:col-span-3 xl:col-start-2">
-    <div class="rounded-3xl border border-n30 p-4 sm:p-8">
+    <div class="rounded-[28px] bg-cream p-4 sm:p-8">
       <ul class="flex flex-col gap-8">
         {#each stepLabels as label, i}
           <li class="relative">
             {#if i === step}
-              <div class="flex w-full items-center justify-start gap-4 rounded-full bg-g50 p-2">
-                <div class="flex items-center justify-center rounded-full bg-g400 p-2 !leading-none text-white">
+              <div class="flex w-full items-center justify-start gap-4 rounded-full bg-paper p-2">
+                <div class="flex items-center justify-center rounded-full bg-moss p-2 !leading-none text-paper">
                   <i class="ph-bold ph-check"></i>
                 </div>
                 <p class="text-sm font-medium">{label}</p>
@@ -189,12 +176,23 @@
   <!-- Step content (exact working-processed field styling: bg-n30 filled inputs) -->
   <div class="col-span-12 md:col-span-8 xl:col-span-6 xl:col-start-6">
     <form
-      class="rounded-3xl border border-n30 p-6 font-medium sm:p-8"
+      class="rounded-[32px] bg-cream p-6 font-medium sm:p-10"
       method="POST"
       use:enhance
     >
-      {#if done}
-        <p class="mb-6 rounded-2xl bg-g50 px-4 py-3 font-medium text-g400">{$_('stage.sent')}</p>
+      <!-- honeypot: invisible to people, filled by bots -->
+      <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+        <label>Website <input bind:value={honeypot} name="website" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      {#if status === 'sent'}
+        <p class="mb-6 flex items-start gap-2 rounded-2xl bg-sage px-4 py-3 font-semibold text-forest" role="status">
+          <i class="ph-fill ph-check-circle mt-0.5 text-lg"></i>{$_('stage.sent')}
+        </p>
+      {:else if status === 'error' || status === 'tooBig'}
+        <p class="mb-6 rounded-2xl bg-claysoft px-4 py-3 font-semibold text-ink" role="alert">
+          {$_(status === 'tooBig' ? 'stage.errorTooBig' : 'stage.error')}
+        </p>
       {/if}
 
       <h4 class="heading-4">{stepLabels[step]}</h4>
@@ -429,17 +427,17 @@
           <button
             type="button"
             onclick={next}
-            class="relative flex w-full items-center justify-center overflow-hidden rounded-full bg-g400 px-4 py-2 text-lg font-medium text-white duration-700 after:absolute after:inset-0 after:left-0 after:w-0 after:rounded-full after:bg-y300 after:duration-700 hover:text-n900 hover:after:w-[calc(100%+2px)] lg:px-8 lg:py-3"
+            class="btn-primary w-full"
           >
             <span class="relative z-10">{$_('stage.next')}</span>
           </button>
         {:else}
           <button
             type="submit"
-            disabled={$submitting}
-            class="relative flex w-full items-center justify-center overflow-hidden rounded-full bg-g400 px-4 py-2 text-lg font-semibold text-white duration-700 after:absolute after:inset-0 after:left-0 after:w-0 after:rounded-full after:bg-y300 after:duration-700 hover:text-n900 hover:after:w-[calc(100%+2px)] disabled:opacity-60 lg:px-8 lg:py-3"
+            disabled={$submitting || status === 'sending' || status === 'sent'}
+            class="btn-primary w-full disabled:opacity-60"
           >
-            <span class="relative z-10">{$_('stage.submit')}</span>
+            <span class="relative z-10">{status === 'sending' ? $_('stage.sending') : $_('stage.submit')}</span>
           </button>
         {/if}
       </div>
@@ -448,7 +446,7 @@
         <button
           type="button"
           onclick={whatsappSend}
-          class="mt-3 flex items-center justify-center gap-2 rounded-full border border-g400 px-6 py-3 font-semibold text-g400 duration-300 hover:bg-g50"
+          class="btn-ghost mt-3 w-full"
         >
           <i class="ph-fill ph-whatsapp-logo"></i>
           {$_('stage.submitWa')}

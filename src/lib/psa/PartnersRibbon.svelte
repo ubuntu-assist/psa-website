@@ -1,34 +1,44 @@
 <script>
   import { _ } from 'svelte-i18n';
-  import { partnersRibbon } from './data.js';
+  import { partenairesInstitutionnels, partenairesTechniques } from './data.js';
 
-  // doubled list -> seamless CSS marquee (track animates 0 -> -50%)
-  const marquee = [...partnersRibbon, ...partnersRibbon];
+  // doubled lists -> seamless CSS marquee (track animates 0 -> -50%)
+  const bands = [partenairesInstitutionnels, partenairesTechniques].map((l) => ({
+    count: l.length,
+    items: [...l, ...l]
+  }));
 </script>
 
-<section
-  id="partenaires"
-  class="relative overflow-hidden scroll-mt-24 bg-y100 py-20 md:py-28"
->
-  <div class="container mb-12">
-    <h5 class="heading-5 text-g400">{$_('partenaires.kicker')}</h5>
-    <h2 class="heading-2 pt-3">{$_('partenaires.title')}</h2>
-    <p class="max-w-[560px] pt-4 text-n600">{$_('partenaires.para')}</p>
+<section id="partenaires" class="pat-woven relative scroll-mt-24 overflow-hidden bg-sage py-20 md:py-28">
+  <div class="container mb-16 grid grid-cols-12 items-end gap-y-8 lg:gap-x-8">
+    <div class="col-span-12 lg:col-span-7">
+      <h2 class="t-h2">{$_('partenaires.title')}</h2>
+    </div>
+    <div class="col-span-12 lg:col-span-4 lg:col-start-9">
+      <p class="t-lead">{$_('partenaires.para')}</p>
+      <a href="/partenaires" class="btn-primary mt-6">
+        {$_('partenaires.cta')}<span class="btn-ico"><i class="ph-bold ph-arrow-right"></i></span>
+      </a>
+    </div>
   </div>
 
   <div class="relative">
     <!-- band 1 -->
     <div
-      class="flex translate-y-1/2 rotate-[7deg] scale-110 overflow-hidden border-y-4 border-n900 bg-white"
+      class="flex translate-y-1/2 rotate-[7deg] scale-110 overflow-hidden border-y border-ink/15 bg-paper"
     >
       <div class="ribbon-track flex w-max shrink-0 px-2">
-        {#each marquee as p, i}
+        {#each bands[0].items as p, i}
           <span
-            class="flex items-center justify-center gap-3 px-4 py-4 text-n900 transition-colors hover:bg-n20 md:gap-4 md:py-6"
-            aria-hidden={i >= partnersRibbon.length ? 'true' : undefined}
+            class="flex items-center justify-center gap-3 px-5 py-3 text-n900 transition-colors hover:bg-cream md:gap-4 md:py-4"
+            aria-hidden={i >= bands[0].count ? 'true' : undefined}
           >
-            <i class="ph {p.icon} text-3xl md:text-4xl"></i>
-            <span class="whitespace-nowrap text-2xl font-semibold uppercase md:text-3xl">{p.label}</span>
+            <img
+              src="/assets/images/psa/partners/{p.logo}.png"
+              alt={i >= bands[0].count ? '' : p.name}
+              title={p.name}
+              class="h-12 w-auto max-w-[160px] object-contain md:h-16"
+            />
           </span>
         {/each}
       </div>
@@ -36,16 +46,20 @@
 
     <!-- band 2 (crosses the first, scrolls the other way) -->
     <div
-      class="flex -translate-y-1/2 -rotate-[7deg] scale-110 overflow-hidden border-y-4 border-n900 bg-white"
+      class="flex -translate-y-1/2 -rotate-[7deg] scale-110 overflow-hidden border-y border-ink/15 bg-paper"
     >
       <div class="ribbon-track ribbon-track--rev flex w-max shrink-0 px-2">
-        {#each marquee as p, i}
+        {#each bands[1].items as p, i}
           <span
-            class="flex items-center justify-center gap-3 px-4 py-4 text-n900 transition-colors hover:bg-n20 md:gap-4 md:py-6"
-            aria-hidden={i >= partnersRibbon.length ? 'true' : undefined}
+            class="flex items-center justify-center gap-3 px-5 py-3 text-n900 transition-colors hover:bg-cream md:gap-4 md:py-4"
+            aria-hidden={i >= bands[1].count ? 'true' : undefined}
           >
-            <i class="ph {p.icon} text-3xl md:text-4xl"></i>
-            <span class="whitespace-nowrap text-2xl font-semibold uppercase md:text-3xl">{p.label}</span>
+            <img
+              src="/assets/images/psa/partners/{p.logo}.png"
+              alt={i >= bands[1].count ? '' : p.name}
+              title={p.name}
+              class="h-12 w-auto max-w-[160px] object-contain md:h-16"
+            />
           </span>
         {/each}
       </div>

@@ -1,19 +1,16 @@
 <script>
   import { _ } from 'svelte-i18n';
+  import { CV_MAX_MB, CV_TYPES } from './schemas.js';
 
   let {
     file = $bindable(/** @type {File | null} */ (null)),
     accept = '.pdf,.doc,.docx',
-    maxSizeMb = 5,
+    maxSizeMb = CV_MAX_MB,
     hint = '',
     error = $bindable('')
   } = $props();
 
-  const ACCEPTED_TYPES = [
-    'application/pdf',
-    'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-  ];
+  const ACCEPTED_TYPES = CV_TYPES;
 
   let dragging = $state(false);
   let inputEl = $state(/** @type {HTMLInputElement | null} */ (null));
@@ -67,7 +64,7 @@
       type="button"
       class="flex w-full flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed p-6 text-center transition-colors {dragging
         ? 'border-g400 bg-g50'
-        : 'border-n30 hover:border-g400'}"
+        : 'border-ink/15 bg-paper hover:border-g400'}"
       ondragover={(e) => {
         e.preventDefault();
         dragging = true;
@@ -78,7 +75,7 @@
     >
       <i class="ph ph-upload-simple text-3xl text-g400"></i>
       <p class="text-sm font-medium">{hint || $_('stage.fCvFileHint')}</p>
-      <p class="text-xs text-n300">PDF, DOC, DOCX — 5 Mo max</p>
+      <p class="text-xs text-n300">PDF, DOC, DOCX — {maxSizeMb} Mo max</p>
     </button>
   {:else}
     <div class="flex items-center justify-between gap-3 rounded-xl border border-g75 bg-g50 p-3">

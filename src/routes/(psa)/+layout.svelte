@@ -6,7 +6,11 @@
   let { children } = $props();
 </script>
 
-<Navbar />
-{@render children()}
-<Footer />
-<ScrollTop />
+<div class="psa min-h-screen">
+  <Navbar />
+  <main>
+    {@render children()}
+  </main>
+  <Footer />
+  <ScrollTop />
+</div>

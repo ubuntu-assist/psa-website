@@ -93,7 +93,26 @@ export default {
         bg6: '#FEF6E5',
 
         // stroke color
-        sp: 'rgba(154, 153, 172, .4)'
+        sp: 'rgba(154, 153, 172, .4)',
+
+        // PSA « Terroir » design system
+        forest: '#0F2E1F',
+        forest2: '#173D2A',
+        moss: '#1B8A3D',
+        olive: '#465626',
+        sage: '#DDE7D3',
+        cream: '#F4EDE2',
+        paper: '#FBF8F2',
+        sun: '#FDC500',
+        sunsoft: '#FFE9A3',
+        clay: '#C4552D',
+        claysoft: '#F3D9CC',
+        ink: '#0A2412'
+      },
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        body: ['Manrope', 'system-ui', 'sans-serif'],
+        label: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
       },
       padding: {
         25: '100px',

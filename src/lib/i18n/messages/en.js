@@ -1,13 +1,17 @@
 export default {
   meta: {
-    homeTitle: "Pépinière Semences d'Avenir — Seeds, seedlings & farm services in Dschang",
+    homeTitle: "Pépinière Semences d'Avenir (PSA) — Seeds, seedlings & farm services in Dschang",
     homeDesc:
-      "Pépinière Semences d'Avenir (Dschang, Cameroon): certified seeds and seedlings, ecological fertilisers, agricultural and rural project support, training, and a natural Food & Health line."
+      "Pépinière Semences d'Avenir (PSA), Dschang, Cameroon, since 2014: seeds and seedlings, fertilisers and crop protectants, herbal teas and honey, training, agricultural and rural services, naturopathy."
   },
 
   nav: {
+    order: 'Order',
     produits: 'Products & Services',
     apropos: 'About',
+    partenaires: 'Partners',
+    actions: 'Social action',
+    mediatheque: 'Media library',
     sante: 'Food & Health',
     blog: 'Blog',
     contact: 'Contact',
@@ -15,6 +19,22 @@ export default {
     cta: 'Order on WhatsApp',
     menu: 'Menu',
     lang: 'Language'
+  },
+
+  brand: {
+    name: "Pépinière Semences d'Avenir",
+    short: 'PSA'
+  },
+
+  home: {
+    secteursTitlePre: 'Four trades, ',
+    secteursTitleEm: 'one shared root.',
+    produitsTitlePre: 'From seed ',
+    produitsTitleEm: 'to table.',
+    pourquoiKicker: 'Why PSA',
+    temoignagesKicker: 'Testimonials',
+    actusKicker: 'Journal',
+    scanKicker: 'Stay connected'
   },
 
   common: {
@@ -26,23 +46,61 @@ export default {
     inStock: 'In stock',
     order: 'Order {name}',
     readArticle: 'Read the article',
-    readAlso: 'Read next'
+    readAlso: 'Read next',
+    copy: 'Copy',
+    copied: 'Copied!',
+    close: 'Close',
+    open: 'Open'
   },
 
   hero: {
-    name: "Semences d'Avenir",
+    imageAlt: 'Farmer tending crops in a lush green field',
+    eyebrow: 'Dschang · West Cameroon — since 2014',
+    discover: 'Explore our products',
+    scroll: 'Scroll',
+    name: "Pépinière Semences d'Avenir",
+    short: '(PSA)',
     badge1: 'Certified seed activity',
     badge2: 'Organic farming',
     tagline: 'The assurance of agricultural and rural success, from sowing to harvest.',
     cta: 'Order on WhatsApp'
   },
 
-  offres: [
-    { heading: 'Certified seeds', text: 'MINADER-approved seed activity' },
-    { heading: 'Organic farming', text: 'Organic compliance certificate' },
-    { heading: 'Farm projects', text: 'Design, implementation, evaluation' },
-    { heading: 'Training', text: 'Hands-on workshops & internships' }
-  ],
+  secteurs: {
+    titlePre: 'Our ',
+    titleEm: 'areas of activity',
+    items: [
+      {
+        heading: 'Agriculture & environment',
+        text: 'Seeds, seedlings and ecological inputs for sustainable farming.'
+      },
+      {
+        heading: 'Rural development',
+        text: 'Agricultural services and support for rural development projects.'
+      },
+      {
+        heading: 'Natural food & health',
+        text: 'Herbal teas, honey, naturopathy and healthy eating.'
+      },
+      {
+        heading: 'Entrepreneurship training',
+        text: 'Internships, hands-on training and job integration.'
+      }
+    ]
+  },
+
+  stats: {
+    since: 'Since',
+    year: '2014',
+    sinceText: 'serving growers in Cameroon and Central Africa.',
+    items: [
+      { value: '65', label: 'jobs created' },
+      { value: '9,500 ha', label: 'hectares planted' },
+      { value: '≈ 350', label: 'interns trained' },
+      { value: '≈ 10,000', label: 'satisfied customers' },
+      { value: '≈ 1,250', label: 'varieties grown' }
+    ]
+  },
 
   produitsTeaser: {
     titlePre: 'Our ',
@@ -51,28 +109,59 @@ export default {
 
   categories: [
     {
-      titre: 'Food-crop seeds',
-      texte: 'Maize, beans, groundnut and other staple crops with high germination rates.'
+      titre: 'Seeds and seedlings',
+      accroche: 'Solid foundations for generous, lasting harvests.',
+      offre:
+        'A rigorous selection of farmer-saved seeds, horticultural seeds and vigorous seedlings (vegetable, fruit and ornamental).',
+      engagement:
+        'To guarantee top-quality planting material, fully adapted to local soil and climate conditions, to maximise your chances of success from the moment you plant.'
     },
     {
-      titre: 'Vegetable seeds',
-      texte: 'Tomato, pepper, okra, leafy greens: productive and hardy varieties.'
+      titre: 'Fertilisers and crop protectants',
+      accroche: 'Feeding the soil and protecting your harvests, naturally.',
+      offre:
+        'A full range of ecological inputs, including organic fertilisers (composts, biofertilisers, green manures, etc.) and bio-protection solutions against pests and diseases.',
+      engagement:
+        'To preserve the fertility of your soils and the health of your crops while respecting the environment and biodiversity, for healthy, productive farming.'
     },
     {
-      titre: 'Fruit & forest seedlings',
-      texte: 'Young grafted and forest seedlings ready for planting.'
+      titre: 'Medicinal herbal teas and honey',
+      accroche: "Nature's benefits, concentrated for your wellbeing.",
+      offre:
+        'Artisanal infusions made from carefully harvested medicinal plants, and pure raw honey rich in therapeutic and nutritional virtues.',
+      engagement:
+        'To offer you authentic, 100% natural products that strengthen your immune system, ease your daily life and care for your health through plants.'
     },
     {
-      titre: 'Ecological fertilisers',
-      texte: 'Organic amendments to durably restore soil fertility.'
+      titre: 'Intern support and training',
+      accroche: 'Passing on know-how to cultivate the future.',
+      offre:
+        'Theoretical and practical training programmes (in agriculture, market gardening, naturopathy or processing) and personalised mentoring for interns and project holders.',
+      engagement:
+        'To share our field expertise, build your professional skills and offer you an immersive, formative learning space.'
     },
     {
-      titre: 'Natural protectants',
-      texte: 'Bio-protectants against pests and diseases, with no synthetic residues.'
+      titre: 'Agricultural and rural services',
+      accroche: 'Hands-on technical support to boost your projects.',
+      offre:
+        'Tailored services for your farm work and rural development (ploughing, plot maintenance, setting up cropping systems, on-site technical advice).',
+      engagement:
+        'To put our know-how and equipment at your disposal to optimise your yields and free you from the heaviest technical constraints.'
     },
     {
-      titre: 'Services & support',
-      texte: 'Diagnosis, project design, field technical follow-up and training.'
+      titre: 'Naturopathy consultation and follow-up',
+      accroche: 'A holistic approach to regain balance and vitality.',
+      offre:
+        'Personalised vitality assessments, advice on lifestyle, healthy eating and herbal medicine tailored to your profile.',
+      engagement:
+        "To guide you step by step towards overall wellbeing by stimulating your body's self-healing capacities with natural, preventive methods."
+    },
+    {
+      titre: 'Farm equipment and food',
+      accroche: 'Equip and nourish effectively to succeed.',
+      offre: 'Equipment and small farm tools suited to your needs, plus quality food solutions.',
+      engagement:
+        'To make your daily work easier with robust, functional equipment, while ensuring suitable nutritional intake.'
     }
   ],
 
@@ -125,17 +214,21 @@ export default {
 
   aproposTeaser: {
     kicker: 'About & guarantees',
-    title: 'A certified structure, serving the agricultural and rural world',
-    para: 'Based at Carrefour des semences in Dschang, PSA supplies quality seeds and seedlings, ecological fertilisers, and supports agricultural and rural projects.',
+    title: 'A company rooted in the realities of Central Africa',
+    para: 'Based at Carrefour des semences in Dschang since 2014, PSA supplies quality seeds and seedlings and ecological inputs, and supports agricultural and rural projects.',
     cta: 'See our certifications'
   },
 
   certifs: [
-    { titre: 'Unique ID number (NIU)', texte: 'PO39612653286J — registered and identified structure.' },
+    {
+      titre: 'Unique ID number (NIU)',
+      texte: 'PO39612653286J — registered and identified structure.'
+    },
     { titre: 'Trade register', texte: 'RC/BFM/A/486 — legally incorporated activity.' },
     {
       titre: 'Seed activity (MINADER)',
-      texte: 'Seed-activity operating certificate issued by the Ministry of Agriculture.'
+      texte:
+        'Seed-activity operating certificate issued by the Ministry of Agriculture and Rural Development.'
     },
     { titre: 'Organic farming', texte: 'Organic-farming compliance certificate.' },
     {
@@ -154,7 +247,7 @@ export default {
   santeTeaser: {
     kicker: 'Assured Health Plan',
     title: 'Natural food & health',
-    para: 'Hive products, medicinal plants, activated vegetable charcoal (CHARVAS) and small equipment — with advice and support.',
+    para: 'Medicinal herbal teas, pure honey, naturopathy consultation and follow-up, equipment and food solutions — with advice and support.',
     cta: 'Discover the health line'
   },
 
@@ -170,14 +263,12 @@ export default {
       {
         nom: 'Young farmer',
         role: 'Dschang',
-        texte:
-          'The team helped me set up my vegetable project from A to Z. Serious, close support.'
+        texte: 'The team helped me set up my vegetable project from A to Z. Serious, close support.'
       },
       {
         nom: 'NGO project',
         role: 'West Cameroon',
-        texte:
-          'A trusted partner for sourcing certified seedlings and for field training.'
+        texte: 'A trusted partner for sourcing certified seedlings and for field training.'
       },
       {
         nom: 'Market gardener',
@@ -200,8 +291,7 @@ export default {
       {
         nom: "Women's group",
         role: 'Fongo-Tongo',
-        texte:
-          'Clear, practical training. We started our own village nursery thanks to them.'
+        texte: 'Clear, practical training. We started our own village nursery thanks to them.'
       },
       {
         nom: 'Fruit farmer',
@@ -215,7 +305,60 @@ export default {
   partenaires: {
     kicker: 'Our partners',
     title: 'Technical & institutional partners',
-    para: 'PSA works alongside NGOs, donors, cooperatives and institutions in agricultural and rural development.'
+    para: 'PSA works alongside public institutions, universities, NGOs, donors and companies in agricultural and rural development.',
+    cta: 'See all our partners'
+  },
+
+  partenairesPage: {
+    title: 'Our partners',
+    subtitle: 'Institutions, universities, NGOs and companies moving forward with us.',
+    instKicker: 'Institutional partners',
+    instTitle: 'They support our work',
+    techKicker: 'Technical partners',
+    techTitle: 'They work alongside us in the field',
+    becomeTitle: 'Become a partner',
+    becomeText:
+      'Running an agricultural, rural or training project? Let’s build sustainable solutions together.',
+    becomeCta: 'Contact us'
+  },
+
+  scan: {
+    kicker: 'Scan to find us',
+    title: 'Eleven direct links to our services and platforms',
+    para: 'Scan a QR code with your phone, or click a card to open the link.',
+    catalogTitle: 'Our online catalogue',
+    catalogText:
+      "All our products and current prices in the Pépinière Semences d'Avenir WhatsApp shop.",
+    catalogCta: 'Open the catalogue',
+    scanMe: 'Scan me',
+    directTitle: 'Direct contact',
+    directPlace: 'Carrefour des semences, Dschang — West Cameroon'
+  },
+
+  channels: {
+    email: 'Email',
+    boutique: 'Online shop',
+    graines: 'Seed site',
+    plantes: 'Seedling site',
+    facebook: 'Facebook',
+    youtube: 'YouTube',
+    tiktok: 'TikTok',
+    x: 'X',
+    linkedin: 'LinkedIn',
+    telegram: 'Telegram',
+    whatsapp: 'WhatsApp'
+  },
+
+  newsletter: {
+    title: 'Subscribe to the newsletter',
+    text: 'Get seasonal advice, news and training offers.',
+    placeholder: 'Your email address',
+    button: 'Subscribe',
+    invalid: 'Invalid email address.',
+    subject: 'Newsletter subscription',
+    body: "Hello, please subscribe me to the Pépinière Semences d'Avenir newsletter with this address: {email}",
+    sent: 'Thank you! Your subscription is confirmed — a welcome email is on its way.',
+    error: 'Subscription failed. Please try again in a moment.'
   },
 
   actus: {
@@ -230,7 +373,8 @@ export default {
     para: 'Our team answers on WhatsApp, by phone or by email.',
     whatsapp: 'Order on WhatsApp',
     contact: 'Contact us',
-    countLabel: 'Growers and cooperatives already trust us'
+    count: '10k',
+    countLabel: 'Satisfied customers since 2014'
   },
 
   faq: {
@@ -243,62 +387,67 @@ export default {
     cta: 'Contact us',
     items: [
       {
-        q: 'What products do you offer?',
-        a: 'Food-crop and vegetable seeds, fruit and forest seedlings, ecological fertilisers and protectants, and a Food & Health line (honey, herbal teas, CHARVAS, equipment).'
+        q: 'What products and services do you offer?',
+        a: 'Seeds and seedlings, fertilisers and crop protectants, medicinal herbal teas and honey, farm equipment and food — plus training, agricultural and rural services and naturopathy consultations.'
       },
       {
         q: 'How do I place an order?',
-        a: 'Contact us on WhatsApp, by phone or via the form. We advise on suitable varieties, prepare a quote, then you collect the order at Carrefour des semences in Dschang.'
+        a: 'Browse our online shop on WhatsApp, then contact us on WhatsApp, by phone or via the form. We advise on suitable varieties, prepare a quote, then you collect the order at Carrefour des semences in Dschang.'
       },
       {
         q: 'What payment methods do you accept?',
         a: 'Cash on site, or Mobile Money (MTN MoMo / Orange Money).'
       },
       {
+        q: 'Do you take interns?',
+        a: 'Yes. Since 2014 we have hosted and mentored around 350 interns free of charge: nursery work, market gardening, seed production, naturopathy and processing. Apply from the “Internships & training” page.'
+      },
+      {
         q: 'Do you support agricultural projects?',
-        a: 'Yes: diagnosis, design, implementation and evaluation of agricultural and rural projects, for individuals, cooperatives, NGOs and donors. We also host interns.'
+        a: 'Yes: diagnosis, design, implementation and follow-up of agricultural and rural projects, for individuals, cooperatives, NGOs and donors.'
       },
       {
         q: 'Where are you located?',
-        a: 'At Carrefour des semences, in Dschang, in the West Region of Cameroon.'
+        a: 'At Carrefour des semences, in Dschang, in the West Region of Cameroon. Our seed and seedling sites are on Google Maps (see the Contact page).'
       }
     ]
   },
 
   footer: {
+    tagline: "Let's think and sow the future.",
+    navTitle: 'Navigation',
+    contactTitle: 'Contact',
+    followTitle: 'Follow us',
+    backTop: 'Back to top',
     minader: 'MINADER',
     minaderDesc: 'Seed-activity operating certificate',
     bio: 'ORGANIC',
     bioDesc: 'Organic-farming compliance certificate',
-    rights: "Pépinière Semences d'Avenir",
+    rights: "Pépinière Semences d'Avenir (PSA)",
     stats: [
-      { label: 'seed & seedling varieties' },
-      { label: 'years serving growers' },
-      { label: 'batches tracked and checked' }
+      { value: '2014', label: 'year founded' },
+      { value: '≈ 10,000', label: 'satisfied customers' },
+      { value: '≈ 1,250', label: 'varieties grown' }
     ]
   },
 
   produitsPage: {
     title: 'Products & Services',
     subtitle:
-      'From certified seeds and seedlings to ecological inputs and project support.',
-    servicesKicker: 'Support',
-    servicesTitle: 'Agricultural & rural services, from idea to review',
-    servicesList: [
-      'Field diagnosis and technical advice',
-      'Design and structuring of agricultural and rural projects',
-      'Implementation, follow-up and evaluation',
-      'Practical training and hosting of interns'
-    ],
-    servicesCta: 'See how it works',
-    fDevisTitle: 'Quote sent',
-    fDevisName: 'Vegetable project',
-    fDevisAgo: '2h ago',
-    fAlert: 'New seed batch!',
-    fProjectsTitle: 'Projects supported',
-    fProjectsYear: 'this year',
-    catalogCtaTitle: 'Browse the full catalogue on WhatsApp',
-    openCatalogAgri: 'Open the Agriculture catalogue',
+      'Seeds, seedlings, ecological inputs, natural food and health, training and field services.',
+    bannerAlt: "Pépinière Semences d'Avenir products: MU BOOST biofertiliser and natural compost",
+    introKicker: 'Our 7 categories',
+    introTitle: 'Everything you need, from seed to table',
+    offre: 'What we offer',
+    engagement: 'Our commitment',
+    ctaOrder: 'See the catalogue',
+    ctaStage: 'Apply for an internship',
+    ctaContact: 'Book an appointment',
+    santeKicker: 'Food & Health',
+    santeTitle: 'The “Assured Health Plan” line',
+    santeText:
+      'Herbal teas, honey, naturopathy, CHARVAS and equipment: discover our wellbeing offer.',
+    santeCta: 'Discover the health line',
     catalogCta: {
       titlePre: 'Browse the full catalogue ',
       titleEm: 'on WhatsApp',
@@ -307,87 +456,215 @@ export default {
       paraMid: ' with ',
       paraEm2: 'personalised advice',
       paraPost: ' for your farm.',
-      button: 'Open the Agriculture catalogue',
+      button: 'Open the online shop',
       buttonSecondary: 'Contact us',
-      infoTitle: 'How it works',
-      info1: 'Message us on WhatsApp',
-      info2: 'Get the current list and prices',
-      info3: 'Confirm your order at the Carrefour des semences'
+      infoTitle: 'Scan to open the catalogue'
     }
   },
 
   aproposPage: {
-    title: 'About & guarantees',
-    subtitle: 'A certified structure, serving the agricultural and rural world.',
+    title: 'About',
+    subtitle: 'A company rooted in the realities of Central Africa.',
     whoKicker: 'Who we are',
-    whoTitle: 'A nursery rooted in the West Region',
+    whoTitle: 'A company rooted in the realities of Central Africa',
     whoPara:
-      "Based at Carrefour des semences in Dschang, Pépinière Semences d'Avenir supplies quality seeds and seedlings, ecological fertilisers and protectants, and supports agricultural and rural projects — plus the “Assured Health Plan” line.",
+      "Based at Carrefour des semences in Dschang, Pépinière Semences d'Avenir produces and supplies quality seeds and seedlings, fertilisers and crop protectants, supports agricultural and rural projects, trains young people and growers, and runs a natural Food & Health line.",
     whoList: [
       'Seeds produced under a seed-activity certificate (MINADER)',
       'Organic-farming compliance',
       'Project support and field training',
-      'Natural Food & Health line'
+      'Natural food and health'
     ],
-    yearsExp: 'years of experience',
-    mission: 'Mission',
-    missionText:
-      'To secure farm success through reliable inputs and close, hands-on support.',
-    values: 'Values',
-    valuesText: 'Quality, transparency, care for soils and closeness to growers.',
-    certsKicker: 'Certifications & official references',
+    since: 'Since',
+    sinceLabel: 'serving growers',
+    visionTitle: 'Vision',
+    vision: [
+      'To become, by 2030, a leading company in the production of high-quality seeds and seedlings and in supporting the creation of productive, sustainable orchards in Cameroon and Central Africa.',
+      "Pépinière Semences d'Avenir aims to contribute to more productive, profitable and environmentally friendly agriculture, in which every grower has reliable planting material and suitable technical support."
+    ],
+    missionTitle: 'Mission',
+    mission:
+      'To provide farmers, entrepreneurs, organisations and development projects with seedlings, seeds and agricultural services that durably improve their performance.',
+    missionIntro: "To fulfil this mission, Pépinière Semences d'Avenir is committed to:",
+    missionList: [
+      'producing and selling grafted fruit seedlings, selected and adapted to local conditions;',
+      'producing and distributing quality agricultural seeds;',
+      'supporting the design, installation, maintenance and monitoring of orchards;',
+      'advising growers on planting, fertilisation, irrigation and crop protection;',
+      'training young people, farmers and entrepreneurs in nursery work, seed production and sustainable agriculture;',
+      'facilitating access to the inputs, innovations and technical solutions farms need to succeed.'
+    ],
+    valuesKicker: 'Our values',
+    valuesTitle: 'The principles that guide us',
+    valuesIntro:
+      'These principles shape our decisions, our working methods and our relationships with customers, partners, staff and communities.',
+    values: [
+      {
+        titre: 'Keeping our commitments',
+        texte:
+          'We put our word, punctuality, quality of delivery and customer satisfaction at the heart of our professional relationships.'
+      },
+      {
+        titre: 'Transparency',
+        texte:
+          'We communicate clearly about the origin, characteristics, quality, conditions of use and expected performance of our products and services.'
+      },
+      {
+        titre: 'Efficiency',
+        texte:
+          'We seek the best possible use of human, material, natural and financial resources to achieve lasting results at a controlled cost.'
+      },
+      {
+        titre: 'Inclusion',
+        texte:
+          "We work with smallholders, commercial farms, young people, women, farmers' organisations, businesses and development projects, without discrimination."
+      },
+      {
+        titre: 'Quality',
+        texte:
+          'We pay particular attention to the selection of planting material, traceability, seedling vigour and monitoring their success after planting.'
+      },
+      {
+        titre: 'Innovation',
+        texte:
+          'We test, adapt and share techniques that improve the production of seedlings, seeds and orchards in African tropical conditions.'
+      }
+    ],
+    opportunity: 'We are an opportunity for you.',
+    certsKicker: 'Certificate and references',
     certsTitle: 'Guarantees that attest to the seriousness of the structure',
-    badgeMinader: 'MINADER',
-    badgeMinaderSub: 'Seed approval',
-    badgeBio: 'Organic farming'
+    certImageAlt:
+      "Seed-activity operating certificate issued to Pépinière Semences d'Avenir by MINADER",
+    certImageCaption: 'Seed-activity operating certificate (MINADER) — click to enlarge'
   },
 
   team: {
     hiring: 'WE ARE HIRING →',
     titlePre: 'The team behind',
     titleEm: 'your seeds and seedlings',
-    para: 'A multidisciplinary team of agronomists, technicians and managers — serving producers across the Western region.',
+    para: 'A multidisciplinary team of engineers, nursery technicians, lab staff and managers — serving growers.',
+    groupAlt: "Group photo of the Pépinière Semences d'Avenir team",
     members: [
-      { nom: 'Jules Kamdem', poste: 'Managing Director' },
-      { nom: 'Marlène Ngassa', poste: 'Technical Director' },
-      { nom: 'Odile Fotso', poste: 'Quality Manager' },
-      { nom: 'Christelle Nono', poste: 'Sales Manager' },
-      { nom: 'Bertrand Tchoua', poste: 'Nursery Manager' },
-      { nom: 'Aïcha Djeukam', poste: 'Training Manager' },
-      { nom: 'Solange Mefire', poste: 'Health Programme Manager' },
-      { nom: 'Patrice Wandji', poste: 'Chief Agronomist' },
-      { nom: 'Hervé Kenfack', poste: 'Field Technician' },
-      { nom: 'Nadège Talla', poste: 'Partnerships Officer' },
-      { nom: 'Steve Fongang', poste: 'Logistics Coordinator' }
+      { nom: 'Eng. NANFACK TSAFOUET Magellan', poste: 'Managing and Sales Director' },
+      { nom: 'TCHIDA SAWA Merveille', poste: 'Head of the herbal medicine laboratory' },
+      { nom: 'CHEWA Donald', poste: 'Head of marketing and sales' },
+      { nom: 'WOUMO Ornella', poste: 'Executive assistant' },
+      { nom: 'DONGMO Elisabeth', poste: 'Head of hygiene and sanitation' },
+      { nom: 'NODEM Nelie', poste: 'Head of the Semences d’Avenir seed laboratory' },
+      { nom: 'MEGHEHO Stevine', poste: 'Intern, naturopathy consultation and follow-up' },
+      {
+        nom: 'MATTA KAMDEM Ingrid',
+        poste: 'Head of the MINADER-site nursery and the Phyto-Solutions d’Avenir lab'
+      },
+      { nom: 'ALOKENG NGUOUADJIO Carlos', poste: 'Head of the Tsinfem-site nursery' },
+      { nom: 'YOUDOM Ronald', poste: 'Nursery assistant' },
+      { nom: 'DLOUATSA Theresa', poste: 'Manager of the PER ANKH shop' },
+      { nom: 'TONFACK Cyrielle', poste: 'Head of accounting and finance' }
     ]
+  },
+
+  actionsPage: {
+    metaTitle: "Our social action — Pépinière Semences d'Avenir",
+    title: 'Our social action',
+    subtitle: 'Sowing solidarity as well as seeds.',
+    kicker: 'Community commitment',
+    heading: 'What we do for communities',
+    items: [
+      {
+        value: '1.2 t',
+        titre: 'Donations of seeds and seedlings',
+        texte:
+          'More than 1.2 tonnes of seeds and many seedlings donated to growers, groups and communities.'
+      },
+      {
+        value: '350',
+        titre: 'Free hosting and mentoring of interns',
+        texte: 'Around 350 interns hosted and mentored free of charge at our production sites.'
+      },
+      {
+        value: '65',
+        titre: 'Support for social and professional integration',
+        texte: 'Helping young people and women into farming careers — 65 jobs created to date.'
+      }
+    ],
+    appeal: 'We need your support to continue this work.',
+    donTitle: 'Make a donation',
+    donText:
+      'Every contribution, however small, funds seeds, seedlings and mentoring for young people.',
+    momo: 'MTN Mobile Money (MoMo)',
+    om: 'Orange Money (OM)',
+    bank: 'Bank transfer (RIB)',
+    rib: {
+      codeBanque: 'Bank code',
+      codeGuichet: 'Branch code',
+      compte: 'Account number',
+      cle: 'RIB key',
+      swift: 'SWIFT code',
+      iban: 'IBAN'
+    },
+    thanks: 'After your donation, message us on WhatsApp so we can thank you.',
+    thanksCta: 'Let us know on WhatsApp',
+    waMessage: 'Hello, I have just made a donation to support your social action.'
+  },
+
+  mediatheque: {
+    metaTitle: "Library & media — Pépinière Semences d'Avenir",
+    title: 'Library & media',
+    subtitle: "Documents, photos and videos from Pépinière Semences d'Avenir.",
+    tabs: { docs: 'Documents', photos: 'Photos', videos: 'Videos' },
+    docs: [
+      {
+        titre: 'Seed-activity operating certificate',
+        texte: 'Issued by MINADER (June 2023).'
+      },
+      {
+        titre: 'Scan to find us',
+        texte: 'Sheet with the eleven QR codes for our services and platforms.'
+      },
+      {
+        titre: 'The group companies',
+        texte: '“Pensons et semons l’avenir” — PSA’s sister organisations.'
+      }
+    ],
+    openDoc: 'Open',
+    photos: [
+      "The Pépinière Semences d'Avenir team",
+      'Agricultural services in the field',
+      'Seeds and seedlings',
+      'Fertilisers and crop protectants: MU BOOST and natural compost'
+    ],
+    videosTitle: 'Our videos',
+    videosText:
+      'Reports, tutorials and behind-the-scenes at the nursery: find all our videos on our channels.',
+    youtubeCta: 'Watch on YouTube',
+    tiktokCta: 'Watch on TikTok'
   },
 
   santePage: {
     title: 'Natural Food & Health',
-    subtitle: '“Assured Health Plan” — a complementary line dedicated to wellbeing.',
+    subtitle: '“Assured Health Plan” — a line dedicated to wellbeing.',
     para2Title: 'Healthy products, sound advice',
     para2:
-      'Hive products, medicinal plants, activated vegetable charcoal and small equipment — with personalised advice and support.',
+      'Medicinal herbal teas, honey, activated vegetable charcoal, naturopathy consultations and equipment — with personalised advice and support.',
     ctaCatalog: 'Food & Health catalogue',
     whatTitle: 'What the health line offers',
     produits: [
-      { titre: 'Natural honey', texte: 'Locally harvested honey, unprocessed.' },
+      { titre: 'Natural honey', texte: 'Pure raw honey, locally harvested.' },
       {
         titre: 'Medicinal plant herbal teas',
-        texte: 'Blends of dried plants for everyday wellbeing.'
+        texte: 'Artisanal infusions of carefully harvested plants.'
       },
       {
         titre: 'CHARVAS — activated vegetable charcoal',
         texte: 'Activated vegetable charcoal for food and hygiene use.'
       },
       {
-        titre: 'Food & sanitary equipment',
-        texte: 'Small equipment and advice for healthier eating.'
+        titre: 'Equipment & food',
+        texte: 'Small equipment and solutions for healthier eating.'
       }
     ],
     splitAgriTitle: 'AGRICULTURE CATALOGUE',
-    splitAgriText:
-      'Seedlings, food-crop and vegetable seeds, ecological fertilisers and protectants.',
+    splitAgriText: 'Seeds and seedlings, fertilisers and crop protectants, farm equipment.',
     splitSanteTitle: 'FOOD & HEALTH',
     splitSanteText:
       'Honey, medicinal plant herbal teas, activated vegetable charcoal (CHARVAS) and equipment.',
@@ -412,6 +689,8 @@ export default {
   contact: {
     locate: 'Find us',
     locateText: 'Carrefour des semences, Dschang.',
+    seeGraines: 'Seed site',
+    seePlantes: 'Seedling site',
     phone: 'Phone / WhatsApp',
     phoneText: 'Monday to Saturday.',
     email: 'Email',
@@ -425,7 +704,10 @@ export default {
     sendEmail: 'Send by email',
     sendWhatsapp: 'WhatsApp',
     mailtoSubject: 'Website contact — {name}',
-    sent: 'Thank you! Your email client will open with the message pre-filled.'
+    sending: 'Sending…',
+    sent: 'Thank you! Your message has been sent. A confirmation has been emailed to you.',
+    error: 'Sending failed. Please try again, or contact us directly:',
+    errorEmail: 'by email',
   },
 
   validation: {
@@ -493,12 +775,17 @@ export default {
     fPeriode: 'Preferred period and duration',
     fPeriodePh: 'e.g. July–September 2026, 2 months',
     fSource: 'How did you hear about us?',
-    sourceOptions: ['Word of mouth', 'Social media', 'Internet search', 'Recommended by someone', 'Other'],
+    sourceOptions: [
+      'Word of mouth',
+      'Social media',
+      'Internet search',
+      'Recommended by someone',
+      'Other'
+    ],
     fCvFile: 'Your CV (PDF or Word)',
     fCvFileHint: 'Drag and drop your file here, or click to choose it',
-    fCvFileNote:
-      "This file can't be attached automatically to the email that will open — please attach it yourself, or add a download link below.",
-    fCvFileTooBig: 'File too large (5 MB maximum).',
+    fCvFileNote: 'Your CV is sent with your application (PDF, DOC or DOCX, 4 MB max).',
+    fCvFileTooBig: 'File too large (4 MB maximum).',
     fCvFileBadType: 'Accepted formats: PDF, DOC, DOCX.',
     fCvFileRemove: 'Remove file',
     fCv: 'Link to your CV (alternative)',
@@ -513,7 +800,10 @@ export default {
     submitWa: 'Send via WhatsApp',
     mailSubject: 'Internship application — {name}',
     waIntro: 'Hello, I would like to apply for an internship:',
-    sent: 'Thank you! Your email client will open with your application pre-filled.',
+    sending: 'Sending…',
+    sent: 'Thank you! Your application has been sent. A confirmation has been emailed to you.',
+    error: 'Sending failed. Please try again, or send your application via WhatsApp below.',
+    errorTooBig: 'Your CV is larger than 4 MB: remove it and add a download link instead.',
     cta: {
       titlePre: 'You want to learn ',
       titleEm: 'the trade in the field',
@@ -576,7 +866,7 @@ export default {
         { type: 'h', text: 'Know your environment' },
         {
           type: 'p',
-          text: "The altitude and rainfall of the West Region suit many vegetable and food crops, but some varieties are hardier than others there. Soil type (clay, sandy) also guides the choice."
+          text: 'The altitude and rainfall of the West Region suit many vegetable and food crops, but some varieties are hardier than others there. Soil type (clay, sandy) also guides the choice.'
         },
         { type: 'h', text: 'Check disease tolerance' },
         {

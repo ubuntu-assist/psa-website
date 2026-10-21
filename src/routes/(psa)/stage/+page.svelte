@@ -2,8 +2,10 @@
   import { _, json } from 'svelte-i18n';
   import PageHeader from '$lib/psa/PageHeader.svelte';
   import InternshipForm from '$lib/psa/InternshipForm.svelte';
+  import { reveal } from '$lib/psa/reveal.js';
 
   const benefits = $derived(/** @type {string[]} */ ($json('stage.benefits') || []));
+  const icons = ['ph-users-three', 'ph-plant', 'ph-certificate', 'ph-graduation-cap'];
 </script>
 
 <svelte:head>
@@ -11,33 +13,38 @@
   <meta name="description" content={$_('stage.metaDesc')} />
 </svelte:head>
 
-<PageHeader title={$_('stage.title')} subtitle={$_('stage.subtitle')} />
+<PageHeader
+  kicker={$_('stage.introKicker')}
+  title={$_('stage.title')}
+  subtitle={$_('stage.subtitle')}
+  image="/assets/images/fixed_price_service_img.jpg"
+/>
 
-<!-- Présentation — pleine largeur -->
-<section class="sbp-30">
-  <div
-    class="container -mt-40 rounded-xl bg-white p-4 sm:p-6 md:rounded-3xl md:p-12 lg:rounded-[60px] lg:p-15"
-  >
-    <div class="mx-auto max-w-[760px] text-center">
-      <h5 class="heading-5 text-g400">{$_('stage.introKicker')}</h5>
-      <h2 class="heading-2 pt-3">{$_('stage.introTitle')}</h2>
-      <p class="pt-4 text-n500">{$_('stage.introPara')}</p>
+<section class="s-pad">
+  <div class="container grid grid-cols-12 gap-y-10 lg:gap-x-10 lg:gap-16">
+    <div class="col-span-12 lg:col-span-5" use:reveal>
+      <h2 class="t-h2">{$_('stage.introTitle')}</h2>
     </div>
-
-    <div class="grid grid-cols-12 gap-4 pt-10 sm:gap-6">
-      {#each benefits as b}
-        <div class="col-span-12 flex items-start gap-3 rounded-2xl bg-n20 p-4 sm:col-span-6 lg:col-span-3">
-          <i class="ph-fill ph-check-circle mt-1 shrink-0 text-g400"></i>
-          <span class="text-sm">{b}</span>
-        </div>
-      {/each}
-    </div>
+    <p class="t-lead col-span-12 lg:col-span-6 lg:col-start-7" use:reveal={{ delay: 100 }}>{$_('stage.introPara')}</p>
   </div>
+  <ul class="container grid gap-4 pt-14 sm:grid-cols-2 lg:grid-cols-4">
+    {#each benefits as b, i}
+      <li class="flex min-h-[220px] flex-col justify-between rounded-[24px] bg-cream p-6" use:reveal={{ delay: i * 80 }}>
+        <span class="flex items-center justify-between">
+          <span class="flex size-11 items-center justify-center rounded-full bg-forest text-lg text-sun"><i class="ph-bold {icons[i % icons.length]}"></i></span>
+          <span class="font-display text-ink/30">0{i + 1}</span>
+        </span>
+        <span class="font-display text-xl leading-snug tracking-tight">{b}</span>
+      </li>
+    {/each}
+  </ul>
 </section>
 
-<!-- Formulaire de candidature — même grille que la page "Post a Task" du legacy -->
-<section class="sbp-30">
+<section class="pb-20 md:pb-28">
   <div class="container">
+    <div class="pb-10" use:reveal>
+      <h2 class="t-h3">{$_('stage.formTitle')}</h2>
+    </div>
     <InternshipForm />
   </div>
 </section>

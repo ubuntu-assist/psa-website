@@ -1,36 +1,51 @@
 <script>
   import { _, json } from 'svelte-i18n';
+  import { reveal } from './reveal.js';
+  import { demarcheIcons } from './data.js';
 
-  const styles = [
-    { card: 'border-g75 bg-g50', pastille: 'bg-g200', shadow: 'border-g75/60 bg-g50/30' },
-    { card: 'border-o300 bg-y50', pastille: 'bg-y300', shadow: 'border-y300/60 bg-y50/30' },
-    { card: 'border-o300 bg-bg6', pastille: 'bg-o300', shadow: 'border-o300/60 bg-bg6/30' }
-  ];
   const etapes = $derived(/** @type {{titre:string,texte:string}[]} */ ($json('howitworks.etapes')) || []);
+  const cards = $derived(
+    /** @type {{titre:string,texte:string}[]} */ ($json('demarcheCards') || []).map((t, i) => ({ icon: demarcheIcons[i], ...t }))
+  );
 </script>
 
 <div class="container">
-  <div class="flex w-full flex-col items-center justify-center text-center">
-    <h5 class="pb-4 font-bold text-g400">{$_('howitworks.kicker')}</h5>
-    <h2 class="heading-2 font-bold text-n900">
-      {$_('howitworks.titlePre')}<span class="text-g400 underline">{$_('howitworks.titleEm')}</span>
-    </h2>
+  <div class="grid grid-cols-12 items-end gap-y-8 lg:gap-x-8" use:reveal>
+    <div class="col-span-12 lg:col-span-7">
+      <h2 class="t-h2">
+        {$_('howitworks.titlePre')}<span class="t-em text-moss">{$_('howitworks.titleEm')}</span>
+      </h2>
+    </div>
   </div>
 
-  <div class="stp-15 grid grid-cols-12 gap-4 sm:gap-6">
+  <ol class="relative grid gap-10 pt-16 md:grid-cols-3 md:gap-8">
+    <span class="absolute left-0 right-0 top-[calc(4rem+28px)] hidden h-px bg-ink/15 md:block" aria-hidden="true"></span>
     {#each etapes as e, i}
-      <div class="relative col-span-12 sm:col-span-6 md:col-span-4 {i === 1 ? 'md:-mb-8 md:mt-8' : ''}">
-        <div
-          class="relative z-10 flex h-full flex-col items-start justify-start gap-8 rounded-xl border {styles[i].card} px-4 py-8 lg:gap-14 lg:px-12 lg:py-16"
+      <li class="relative" use:reveal={{ delay: i * 120 }}>
+        <span
+          class="relative flex size-14 items-center justify-center rounded-full font-display text-xl {i === 0
+            ? 'bg-sun text-ink'
+            : 'border border-ink/15 bg-paper'}"
         >
-          <p class="heading-4 flex size-[72px] items-center justify-center rounded-full {styles[i].pastille} !leading-none">
-            0{i + 1}
-          </p>
-          <h3 class="heading-3 font-bold">{e.titre}</h3>
-          <p class="font-medium">{e.texte}</p>
-        </div>
-        <div class="absolute -bottom-6 left-4 right-4 -z-10 h-[82px] rounded-xl border {styles[i].shadow}"></div>
-      </div>
+          {i + 1}
+        </span>
+        <h3 class="t-h3 pt-8">{e.titre}</h3>
+        <p class="max-w-[320px] pt-3 text-ink/70">{e.texte}</p>
+      </li>
     {/each}
-  </div>
+  </ol>
+
+  <ul class="grid gap-4 pt-16 sm:grid-cols-2 lg:grid-cols-3">
+    {#each cards as d, i}
+      <li class="flex items-start gap-4 rounded-[22px] bg-cream p-6" use:reveal={{ delay: i * 80 }}>
+        <span class="flex size-11 shrink-0 items-center justify-center rounded-full bg-paper text-xl text-moss">
+          <i class="ph-bold {d.icon}"></i>
+        </span>
+        <span>
+          <span class="block font-bold">{d.titre}</span>
+          <span class="block pt-1 text-sm text-ink/60">{d.texte}</span>
+        </span>
+      </li>
+    {/each}
+  </ul>
 </div>
