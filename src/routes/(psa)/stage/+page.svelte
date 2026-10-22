@@ -6,12 +6,10 @@
 
   const benefits = $derived(/** @type {string[]} */ ($json('stage.benefits') || []));
   const icons = ['ph-users-three', 'ph-plant', 'ph-certificate', 'ph-graduation-cap'];
+  import Seo from '$lib/psa/Seo.svelte';
 </script>
 
-<svelte:head>
-  <title>{$_('stage.metaTitle')}</title>
-  <meta name="description" content={$_('stage.metaDesc')} />
-</svelte:head>
+<Seo title={$_('stage.title')} description={$_('seo.stage')} image="/og/stage.jpg" />
 
 <PageHeader
   kicker={$_('stage.introKicker')}

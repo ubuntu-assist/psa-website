@@ -16,12 +16,10 @@
   const values = $derived(arr('aproposPage.values').map((t, i) => ({ icon: valeursIcons[i], ...t })));
 
   const CERT = '/assets/images/psa/photos/certificat-activite-semenciere.jpg';
+  import Seo from '$lib/psa/Seo.svelte';
 </script>
 
-<svelte:head>
-  <title>{$_('aproposPage.title')} — Pépinière Semences d'Avenir</title>
-  <meta name="description" content={$_('aproposPage.subtitle')} />
-</svelte:head>
+<Seo title={$_('aproposPage.title')} description={$_('seo.apropos')} image="/og/a-propos.jpg" />
 
 <PageHeader
   kicker={$_('aproposPage.whoKicker')}

@@ -3,7 +3,10 @@
   import PageHeader from '$lib/psa/PageHeader.svelte';
   import PartnerGrid from '$lib/psa/PartnerGrid.svelte';
   import { reveal } from '$lib/psa/reveal.js';
-  import { partenairesInstitutionnels, partenairesTechniques } from '$lib/psa/data.js';
+  import Seo from '$lib/psa/Seo.svelte';
+  import { getPartners } from '$lib/content.js';
+
+  const { institutional: partenairesInstitutionnels, technical: partenairesTechniques } = getPartners();
 
   const groups = [
     { kicker: 'partenairesPage.instKicker', title: 'partenairesPage.instTitle', list: partenairesInstitutionnels },
@@ -11,10 +14,7 @@
   ];
 </script>
 
-<svelte:head>
-  <title>{$_('partenairesPage.title')} — Pépinière Semences d'Avenir</title>
-  <meta name="description" content={$_('partenairesPage.subtitle')} />
-</svelte:head>
+<Seo title={$_('partenairesPage.title')} description={$_('seo.partenaires')} image="/og/partenaires.jpg" />
 
 <PageHeader
   kicker={$_('partenaires.kicker')}

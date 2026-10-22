@@ -1,21 +1,20 @@
 <script>
   import { onMount } from 'svelte';
-  import { _, json } from 'svelte-i18n';
-  import { teamPhotos } from './data.js';
+  import { _, locale } from 'svelte-i18n';
+  import { getTeam } from '$lib/content.js';
   import { reveal } from './reveal.js';
 
   // Layout after the « team-arch » block (ui-layouts.com): every portrait is cut into
   // its own shape (notch, cut corner, brush blob, arch…), a name tag overlaps its
   // bottom edge, and a thick hand-drawn wave sweeps across the section.
-  // Shape per member, in order; 9 (round arch) is reused for the 12th.
-  const SHAPES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 9];
+  // Members are edited in the CMS (src/content/team.json); shapes cycle in order.
+  const SHAPES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   const members = $derived(
-    /** @type {{nom:string, poste:string}[]} */ ($json('team.members') || []).map((m, i) => ({
+    getTeam($locale).members.map((m, i) => ({
       ...m,
-      photo: teamPhotos[i] || '',
-      clip: SHAPES[i % SHAPES.length],
-      initials: m.nom
+      clip: i === 11 ? 9 : SHAPES[i % SHAPES.length],
+      initials: m.name
         .replace(/^(Ing|Eng)\.\s*/, '')
         .split(/\s+/)
         .slice(0, 2)
@@ -132,8 +131,8 @@
             <div class="aspect-[4/5] w-full" style="clip-path:url(#psa-team-clip-{m.clip})">
               {#if m.photo}
                 <img
-                  src="/assets/images/psa/team/{m.photo}"
-                  alt={m.nom}
+                  src={m.photo}
+                  alt={m.name}
                   loading="lazy"
                   class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
@@ -146,9 +145,9 @@
             <figcaption
               class="relative mx-2.5 -mt-9 rounded-xl border border-ink/10 bg-paper px-3.5 py-2.5 shadow-[0_10px_24px_-14px_rgba(10,36,18,0.35)] transition-transform duration-500 group-hover:-translate-y-1"
             >
-              <p class="text-sm font-bold leading-tight text-ink md:text-[15px]">{m.nom}</p>
+              <p class="text-sm font-bold leading-tight text-ink md:text-[15px]">{m.name}</p>
               <p class="pt-1 font-label text-[11px] uppercase leading-snug tracking-[0.1em] text-ink/55">
-                {m.poste}
+                {m.role}
               </p>
             </figcaption>
           </figure>

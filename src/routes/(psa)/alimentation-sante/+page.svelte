@@ -15,12 +15,10 @@
       .filter((c) => ['tisanes-miel', 'naturopathie', 'equipements'].includes(c.slug))
   );
   const tones = ['bg-sunsoft', 'bg-sage', 'bg-claysoft', 'bg-cream'];
+  import Seo from '$lib/psa/Seo.svelte';
 </script>
 
-<svelte:head>
-  <title>{$_('santePage.title')} — Pépinière Semences d'Avenir</title>
-  <meta name="description" content={$_('santePage.subtitle')} />
-</svelte:head>
+<Seo title={$_('santePage.title')} description={$_('seo.sante')} image="/og/alimentation-sante.jpg" />
 
 <PageHeader
   kicker={$_('santeTeaser.kicker')}

@@ -13,6 +13,7 @@ export default {
     partenaires: 'Partenaires',
     actions: 'Actions sociales',
     mediatheque: 'Médiathèque',
+    calendrier: 'Calendrier',
     sante: 'Alimentation & Santé',
     blog: 'Blog',
     contact: 'Contact',
@@ -36,6 +37,46 @@ export default {
     temoignagesKicker: 'Témoignages',
     actusKicker: 'Journal',
     scanKicker: 'Restons connectés'
+  },
+
+  calendar: {
+    nav: 'Calendrier des semis',
+    title: 'Calendrier des semis',
+    subtitle: 'Que semer, planter et récolter chaque mois dans les hautes terres de l’Ouest.',
+    thisMonth: 'Ce mois-ci',
+    pickMonth: 'Choisir un mois',
+    toSow: 'À semer et planter',
+    toHarvest: 'À récolter',
+    none: 'Rien de prévu ce mois-ci pour ce groupe : préparez vos parcelles et votre pépinière.',
+    yearTitlePre: 'Le calendrier ',
+    yearTitleEm: 'de l’année',
+    all: 'Toutes',
+    categories: { vivrier: 'Vivrier', maraicher: 'Maraîcher', fruitier: 'Fruitiers', rente: 'Rente' },
+    phases: { sow: 'Semis direct', nursery: 'Pépinière', plant: 'Plantation / repiquage', harvest: 'Récolte' },
+    seasons: { dry: 'Saison sèche', rain1: '1er cycle des pluies', rain2: '2e cycle des pluies' },
+    crop: 'Culture',
+    tip: 'Conseil',
+    order: 'Commander sur WhatsApp',
+    orderMsg: 'Bonjour, je voudrais des semences / plants de {crop} pour {month}. Pouvez-vous me conseiller ?',
+    scrollHint: 'Faites défiler le tableau horizontalement',
+    teaserTitlePre: 'Que semer ',
+    teaserTitleEm: 'en {month} ?',
+    teaserCta: 'Voir le calendrier complet',
+    adviceTitle: 'Besoin d’un conseil personnalisé ?',
+    adviceText: 'Altitude, sol, variété : nos agronomes adaptent ces repères à votre parcelle.'
+  },
+
+  seo: {
+    produits: "Plants et semences certifiés, fertilisants et protecteurs des cultures, tisanes et miel, naturopathie, équipements, formations et prestations agricoles à Dschang.",
+    apropos: "Pépinière Semences d'Avenir (PSA), Dschang, depuis 2014 : vision, mission, valeurs, certificat MINADER et une équipe au service des producteurs d'Afrique centrale.",
+    partenaires: "Les partenaires institutionnels et techniques de PSA : MINADER, Université de Dschang, GIZ, Enabel, AUF, Caritas et une quarantaine d'acteurs du développement rural.",
+    actions: "Dons de semences, encadrement gratuit de 350 stagiaires, insertion professionnelle : découvrez les actions sociales de PSA et soutenez-les par MoMo, OM ou virement.",
+    mediatheque: "Documents officiels, photos et vidéos de Pépinière Semences d'Avenir : certificat MINADER, QR codes et coulisses de la pépinière à Dschang.",
+    sante: "Tisanes de plantes médicinales, miel naturel, CHARVAS (charbon végétal actif), naturopathie et équipements : le volet Alimentation & Santé de PSA à Dschang.",
+    contact: "Contactez Pépinière Semences d'Avenir à Dschang : WhatsApp +237 690 81 08 73, email contact@psa.com, sites des graines et des plantes sur Google Maps.",
+    stage: "Stages et formations pratiques en pépinière, maraîchage, production semencière et naturopathie à Dschang. Encadrement gratuit : candidatez en ligne.",
+    calendrier: "Calendrier des semis de l'Ouest-Cameroun : que semer, planter et récolter chaque mois (maïs, haricot, tomate, chou, avocatier…). Conseils et commande sur WhatsApp.",
+    blog: "Conseils de pépinière, fertilisation, choix des semences et santé naturelle : le journal de Pépinière Semences d'Avenir à Dschang."
   },
 
   common: {
@@ -558,27 +599,6 @@ export default {
     titleEm: 'vos semences et plants',
     para: 'Une équipe pluridisciplinaire réunissant ingénieurs, techniciens de pépinière, laborantins et gestionnaires — au service des producteurs.',
     groupAlt: "Photo de groupe de l'équipe de Pépinière Semences d'Avenir",
-    members: [
-      { nom: 'Ing. NANFACK TSAFOUET Magellan', poste: 'Directeur général et commercial' },
-      { nom: 'TCHIDA SAWA Merveille', poste: 'Responsable du laboratoire de phytothérapie' },
-      { nom: 'CHEWA Donald', poste: 'Chef service marketing et commercial' },
-      { nom: 'WOUMO Ornella', poste: 'Assistante de direction' },
-      { nom: 'DONGMO Elisabeth', poste: "Chef service d'hygiène et de salubrité" },
-      { nom: 'NODEM Nelie', poste: 'Responsable du laboratoire des semences d’avenir' },
-      {
-        nom: 'MEGHEHO Stevine',
-        poste: 'Stagiaire au service de consultation et de suivi en naturopathie'
-      },
-      {
-        nom: 'MATTA KAMDEM Ingrid',
-        poste:
-          'Responsable de la pépinière du site MINADER et du laboratoire Phyto-Solutions d’Avenir'
-      },
-      { nom: 'ALOKENG NGUOUADJIO Carlos', poste: 'Responsable de la pépinière du site de Tsinfem' },
-      { nom: 'YOUDOM Ronald', poste: 'Assistant à la pépinière' },
-      { nom: 'DLOUATSA Theresa', poste: 'Responsable de la boutique PER ANKH' },
-      { nom: 'TONFACK Cyrielle', poste: 'Chef service comptable et financier' }
-    ]
   },
 
   actionsPage: {
@@ -632,27 +652,7 @@ export default {
     title: 'Bibliothèque & médiathèque',
     subtitle: 'Documents, photos et vidéos de Pépinière Semences d’Avenir.',
     tabs: { docs: 'Documents', photos: 'Photos', videos: 'Vidéos' },
-    docs: [
-      {
-        titre: "Certificat d'exercice de l'activité semencière",
-        texte: 'Délivré par le MINADER (juin 2023).'
-      },
-      {
-        titre: 'Scanner pour nous retrouver',
-        texte: 'Fiche des onze QR codes de nos services et plateformes.'
-      },
-      {
-        titre: 'Les entreprises du groupe',
-        texte: '« Pensons et semons l’avenir » — les structures sœurs de PSA.'
-      }
-    ],
     openDoc: 'Ouvrir',
-    photos: [
-      "L'équipe de Pépinière Semences d'Avenir",
-      'Prestations agricoles sur le terrain',
-      'Plants et semences',
-      'Fertilisants et protecteurs des cultures : MU BOOST et compost naturel'
-    ],
     videosTitle: 'Nos vidéos',
     videosText:
       'Reportages, tutoriels et coulisses de la pépinière : retrouvez toutes nos vidéos sur nos chaînes.',
@@ -840,123 +840,5 @@ export default {
       quoteName: 'Ancien stagiaire',
       quoteRole: 'Promotion 2024'
     }
-  },
-
-  posts: [
-    {
-      slug: 'preparer-sa-pepiniere-avant-la-saison-des-pluies',
-      titre: 'Préparer sa pépinière avant la saison des pluies',
-      categorie: 'Conseils pépinière',
-      date: '12 mars 2026',
-      extrait:
-        'Substrat, ombrage, calendrier de semis : les gestes clés pour des plants vigoureux dès les premières pluies.',
-      corps: [
-        {
-          type: 'p',
-          text: "La réussite d'une campagne se joue en grande partie avant même le semis. Une pépinière bien préparée permet d'obtenir des plants sains, homogènes et prêts à être repiqués au bon moment."
-        },
-        { type: 'h', text: 'Choisir et préparer le substrat' },
-        {
-          type: 'p',
-          text: "Un bon substrat de pépinière est meuble, drainant et riche en matière organique bien décomposée. Évitez la terre prélevée sous des cultures malades ; mélangez terre de surface, compost mûr et un peu de sable pour l'aération."
-        },
-        { type: 'h', text: "Gérer l'ombrage et l'arrosage" },
-        {
-          type: 'p',
-          text: "Un ombrage léger protège les jeunes plants du soleil de midi sans les étioler. L'arrosage doit rester régulier mais modéré : un excès d'eau favorise la fonte des semis."
-        },
-        { type: 'h', text: 'Planifier le calendrier' },
-        {
-          type: 'p',
-          text: "Comptez le nombre de jours entre le semis et le repiquage pour chaque espèce, et remontez à partir de la date d'installation souhaitée. Nos équipes vous aident à établir ce calendrier selon votre parcelle."
-        }
-      ]
-    },
-    {
-      slug: 'choisir-des-semences-adaptees-a-votre-parcelle',
-      titre: 'Comment choisir des semences adaptées à votre parcelle',
-      categorie: 'Semences',
-      date: '3 février 2026',
-      extrait:
-        'Altitude, type de sol, pression des maladies, débouché commercial : les critères pour bien choisir ses variétés.',
-      corps: [
-        {
-          type: 'p',
-          text: 'Toutes les variétés ne se valent pas selon le contexte. Un choix raisonné limite les risques et améliore le rendement.'
-        },
-        { type: 'h', text: 'Connaître son milieu' },
-        {
-          type: 'p',
-          text: "L'altitude et la pluviométrie de la région de l'Ouest conviennent à de nombreuses cultures maraîchères et vivrières, mais certaines variétés y sont plus rustiques que d'autres. Le type de sol (argileux, sableux) oriente aussi le choix."
-        },
-        { type: 'h', text: 'Regarder la tolérance aux maladies' },
-        {
-          type: 'p',
-          text: 'Privilégiez les variétés tolérantes aux maladies fréquentes localement : cela réduit les traitements et sécurise la production.'
-        },
-        { type: 'h', text: 'Penser au débouché' },
-        {
-          type: 'p',
-          text: 'Calibre, couleur, conservation : la variété idéale dépend aussi de votre marché. Parlez-nous de votre projet, nous vous orientons vers les semences certifiées les plus adaptées.'
-        }
-      ]
-    },
-    {
-      slug: 'fertilisation-organique-redonner-vie-aux-sols',
-      titre: 'Fertilisation organique : redonner vie aux sols',
-      categorie: 'Fertilité des sols',
-      date: '18 janvier 2026',
-      extrait:
-        'Compost, engrais verts et amendements : une approche durable pour restaurer la fertilité sans épuiser la terre.',
-      corps: [
-        {
-          type: 'p',
-          text: 'Des sols fatigués donnent des cultures fragiles. La fertilisation organique nourrit à la fois la plante et la vie du sol.'
-        },
-        { type: 'h', text: 'Le compost, base de tout' },
-        {
-          type: 'p',
-          text: "Un compost bien conduit apporte une matière organique stable qui améliore la structure, la rétention d'eau et l'activité biologique du sol."
-        },
-        { type: 'h', text: 'Les engrais verts' },
-        {
-          type: 'p',
-          text: "Semés entre deux cultures, les engrais verts protègent le sol, limitent les adventices et, une fois enfouis, restituent de l'azote et de la matière organique."
-        },
-        { type: 'h', text: 'Nos amendements écologiques' },
-        {
-          type: 'p',
-          text: "Pépinière Semences d'Avenir propose une gamme d'amendements et de bio-protecteurs conformes à l'agriculture biologique, avec des conseils d'utilisation adaptés à votre culture."
-        }
-      ]
-    },
-    {
-      slug: 'charbon-vegetal-actif-charvas-usages-et-bienfaits',
-      titre: 'Le charbon végétal actif (CHARVAS) : usages et bienfaits',
-      categorie: 'Plan Santé Assurée',
-      date: '9 décembre 2025',
-      extrait:
-        "Zoom sur un produit phare du volet Alimentation & Santé : ce qu'est le CHARVAS et comment l'utiliser.",
-      corps: [
-        {
-          type: 'p',
-          text: "Le charbon végétal actif est obtenu par carbonisation puis activation de matières végétales. Sa structure très poreuse lui donne un fort pouvoir d'adsorption."
-        },
-        { type: 'h', text: 'Des usages variés' },
-        {
-          type: 'p',
-          text: "Il est traditionnellement employé pour le confort digestif et l'hygiène. On le retrouve aussi dans la filtration et la purification."
-        },
-        { type: 'h', text: 'Bien le choisir' },
-        {
-          type: 'p',
-          text: "La qualité dépend de la matière première et du procédé d'activation. Le CHARVAS proposé dans notre volet « Plan Santé Assurée » est sélectionné pour un usage alimentaire et d'hygiène."
-        },
-        {
-          type: 'p',
-          text: "Retrouvez ce produit et nos conseils d'utilisation via le catalogue Alimentation & Santé sur WhatsApp."
-        }
-      ]
-    }
-  ]
+  }
 };

@@ -831,3 +831,42 @@ input[type="number"] {
     radial-gradient(circle 560px at 0% 180px, rgba(253, 197, 0, 0.16), transparent),
     radial-gradient(circle 560px at 100% 180px, rgba(253, 197, 0, 0.16), transparent);
 }
+
+/* Article body rendered from Markdown (blog posts edited in the CMS) */
+.prose-psa {
+  @apply text-lg leading-[1.75] text-ink/80;
+}
+.prose-psa > * + * {
+  @apply mt-5;
+}
+.prose-psa h2 {
+  @apply t-h3 !mt-12 text-ink;
+}
+.prose-psa h3 {
+  @apply t-h4 !mt-10 text-ink;
+}
+.prose-psa a {
+  @apply font-semibold text-moss underline decoration-moss/40 underline-offset-4 hover:decoration-moss;
+}
+.prose-psa strong {
+  @apply font-bold text-ink;
+}
+.prose-psa ul,
+.prose-psa ol {
+  @apply space-y-2 pl-6;
+}
+.prose-psa ul {
+  @apply list-disc marker:text-moss;
+}
+.prose-psa ol {
+  @apply list-decimal marker:font-bold marker:text-moss;
+}
+.prose-psa blockquote {
+  @apply rounded-r-2xl border-l-4 border-sun bg-cream px-6 py-4 font-display text-xl italic text-ink;
+}
+.prose-psa img {
+  @apply w-full rounded-[20px];
+}
+.prose-psa hr {
+  @apply my-10 border-ink/10;
+}

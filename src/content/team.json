@@ -1,0 +1,132 @@
+{
+  "fr": {
+    "groupPhoto": "/assets/images/psa/photos/equipe-psa.jpg",
+    "members": [
+      {
+        "name": "Ing. NANFACK TSAFOUET Magellan",
+        "role": "Directeur général et commercial",
+        "photo": "/assets/images/psa/team/nanfack-tsafouet-magellan.jpg"
+      },
+      {
+        "name": "TCHIDA SAWA Merveille",
+        "role": "Responsable du laboratoire de phytothérapie",
+        "photo": "/assets/images/psa/team/tchida-sawa-merveille.jpg"
+      },
+      {
+        "name": "CHEWA Donald",
+        "role": "Chef service marketing et commercial",
+        "photo": "/assets/images/psa/team/chewa-donald.jpg"
+      },
+      {
+        "name": "WOUMO Ornella",
+        "role": "Assistante de direction",
+        "photo": "/assets/images/psa/team/woumo-ornella.jpg"
+      },
+      {
+        "name": "DONGMO Elisabeth",
+        "role": "Chef service d'hygiène et de salubrité",
+        "photo": "/assets/images/psa/team/dongmo-elisabeth.jpg"
+      },
+      {
+        "name": "NODEM Nelie",
+        "role": "Responsable du laboratoire des semences d’avenir",
+        "photo": "/assets/images/psa/team/nodem-nelie.jpg"
+      },
+      {
+        "name": "MEGHEHO Stevine",
+        "role": "Stagiaire au service de consultation et de suivi en naturopathie",
+        "photo": "/assets/images/psa/team/megheho-stevine.jpg"
+      },
+      {
+        "name": "MATTA KAMDEM Ingrid",
+        "role": "Responsable de la pépinière du site MINADER et du laboratoire Phyto-Solutions d’Avenir",
+        "photo": "/assets/images/psa/team/matta-kamdem-ingrid.jpg"
+      },
+      {
+        "name": "ALOKENG NGUOUADJIO Carlos",
+        "role": "Responsable de la pépinière du site de Tsinfem",
+        "photo": "/assets/images/psa/team/alokeng-nguouadjio-carlos.jpg"
+      },
+      {
+        "name": "YOUDOM Ronald",
+        "role": "Assistant à la pépinière",
+        "photo": "/assets/images/psa/team/youdom-ronald.jpg"
+      },
+      {
+        "name": "DLOUATSA Theresa",
+        "role": "Responsable de la boutique PER ANKH",
+        "photo": "/assets/images/psa/team/dlouatsa-theresa.jpg"
+      },
+      {
+        "name": "TONFACK Cyrielle",
+        "role": "Chef service comptable et financier",
+        "photo": ""
+      }
+    ]
+  },
+  "en": {
+    "groupPhoto": "/assets/images/psa/photos/equipe-psa.jpg",
+    "members": [
+      {
+        "name": "Ing. NANFACK TSAFOUET Magellan",
+        "role": "Managing and Sales Director",
+        "photo": "/assets/images/psa/team/nanfack-tsafouet-magellan.jpg"
+      },
+      {
+        "name": "TCHIDA SAWA Merveille",
+        "role": "Head of the herbal medicine laboratory",
+        "photo": "/assets/images/psa/team/tchida-sawa-merveille.jpg"
+      },
+      {
+        "name": "CHEWA Donald",
+        "role": "Head of marketing and sales",
+        "photo": "/assets/images/psa/team/chewa-donald.jpg"
+      },
+      {
+        "name": "WOUMO Ornella",
+        "role": "Executive assistant",
+        "photo": "/assets/images/psa/team/woumo-ornella.jpg"
+      },
+      {
+        "name": "DONGMO Elisabeth",
+        "role": "Head of hygiene and sanitation",
+        "photo": "/assets/images/psa/team/dongmo-elisabeth.jpg"
+      },
+      {
+        "name": "NODEM Nelie",
+        "role": "Head of the Semences d’Avenir seed laboratory",
+        "photo": "/assets/images/psa/team/nodem-nelie.jpg"
+      },
+      {
+        "name": "MEGHEHO Stevine",
+        "role": "Intern, naturopathy consultation and follow-up",
+        "photo": "/assets/images/psa/team/megheho-stevine.jpg"
+      },
+      {
+        "name": "MATTA KAMDEM Ingrid",
+        "role": "Head of the MINADER-site nursery and the Phyto-Solutions d’Avenir lab",
+        "photo": "/assets/images/psa/team/matta-kamdem-ingrid.jpg"
+      },
+      {
+        "name": "ALOKENG NGUOUADJIO Carlos",
+        "role": "Head of the Tsinfem-site nursery",
+        "photo": "/assets/images/psa/team/alokeng-nguouadjio-carlos.jpg"
+      },
+      {
+        "name": "YOUDOM Ronald",
+        "role": "Nursery assistant",
+        "photo": "/assets/images/psa/team/youdom-ronald.jpg"
+      },
+      {
+        "name": "DLOUATSA Theresa",
+        "role": "Manager of the PER ANKH shop",
+        "photo": "/assets/images/psa/team/dlouatsa-theresa.jpg"
+      },
+      {
+        "name": "TONFACK Cyrielle",
+        "role": "Head of accounting and finance",
+        "photo": ""
+      }
+    ]
+  }
+}

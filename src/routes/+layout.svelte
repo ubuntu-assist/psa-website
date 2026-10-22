@@ -1,6 +1,7 @@
 <script>
   import '../app.css';
   import { onMount } from 'svelte';
+  import { page } from '$app/stores';
 
   let { children } = $props();
 
@@ -16,5 +17,13 @@
     }
   });
 </script>
+
+<!-- Only the PSA site is meant for search engines; the leftover Servibe template pages
+     (/index1, /worker-profile, /dashboard…) stay reachable but are kept out of results. -->
+<svelte:head>
+  {#if !$page.route.id?.startsWith('/(psa)')}
+    <meta name="robots" content="noindex, nofollow" />
+  {/if}
+</svelte:head>
 
 {@render children()}

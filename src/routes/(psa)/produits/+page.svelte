@@ -29,12 +29,10 @@
     });
     return () => io.disconnect();
   });
+  import Seo from '$lib/psa/Seo.svelte';
 </script>
 
-<svelte:head>
-  <title>{$_('produitsPage.title')} — Pépinière Semences d'Avenir</title>
-  <meta name="description" content={$_('produitsPage.subtitle')} />
-</svelte:head>
+<Seo title={$_('produitsPage.title')} description={$_('seo.produits')} image="/og/produits.jpg" />
 
 <PageHeader
   kicker={$_('produitsPage.introKicker')}

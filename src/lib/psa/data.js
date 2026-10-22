@@ -10,6 +10,22 @@ export const EMAIL = 'contact@psa.com';
 export const NIU = 'PO39612653286J';
 export const RC = 'RC/BFM/A/486';
 
+// Public site URL (canonical links, sitemap, share images). From the evaluation document.
+export const SITE_URL = 'https://www.psa.com';
+
+// Business facts for Google (LocalBusiness structured data).
+// TODO: confirm the opening hours with PSA — the site only says « du lundi au samedi ».
+export const BUSINESS = {
+  name: "Pépinière Semences d'Avenir",
+  alternateName: 'PSA',
+  foundingDate: '2014',
+  street: 'Carrefour des semences',
+  city: 'Dschang',
+  region: 'Ouest',
+  country: 'CM',
+  openingHours: { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '18:00' }
+};
+
 const WA = '237690810873';
 /** @param {string} msg */
 export const wa = (msg) => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
@@ -81,6 +97,7 @@ export const NAV = [
   { key: 'partenaires', href: '/partenaires' },
   { key: 'actions', href: '/actions-sociales' },
   { key: 'mediatheque', href: '/mediatheque' },
+  { key: 'calendrier', href: '/calendrier' },
   { key: 'blog', href: '/blog' },
   { key: 'contact', href: '/contact' }
 ];
@@ -159,78 +176,11 @@ export const temoignageHeads = [
   'people_small2.jpg'
 ];
 
-// Partner logos live in static/assets/images/psa/partners/{logo}.png
-export const partenairesInstitutionnels = [
-  { logo: 'cnjc', name: 'Conseil National de la Jeunesse du Cameroun (CNJC)' },
-  { logo: 'caritas-cameroon', name: 'Caritas Cameroon' },
-  { logo: 'auf', name: 'Agence Universitaire de la Francophonie (AUF)' },
-  { logo: 'universite-dschang', name: 'Université de Dschang' },
-  { logo: 'fasa', name: "Faculté d'Agronomie et des Sciences Agricoles (FASA)" },
-  { logo: 'commune-dschang', name: 'Commune de Dschang' },
-  { logo: 'minjec', name: 'MINJEC' },
-  { logo: 'spg-etso-mbong', name: 'SPG ETSO MBONG' },
-  { logo: 'minader', name: 'MINADER' },
-  { logo: 'gadd', name: "Groupement d'Appui pour le Développement Durable (GADD)" },
-  { logo: 'gapdel', name: 'GAPDEL' },
-  { logo: 'enabel', name: 'Enabel' },
-  { logo: 'afsa', name: 'AFSA' },
-  { logo: 'cati', name: 'CATI² — Université de Douala' },
-  { logo: 'asa', name: 'Action Sociale Africaine (ASA)' },
-  { logo: 'abc-cameroon', name: 'Agri-Business vocational training Center (ABC)' },
-  { logo: 'codas-caritas', name: 'CODAS/Caritas — Diocèse de Bafoussam' },
-  { logo: 'concern', name: 'Concern Worldwide' },
-  { logo: 'iuget', name: 'IUGET' },
-  { logo: 'bcu', name: 'Business and Career University (BCU)' },
-  { logo: 'eta-bafang', name: "École Technique d'Agriculture de Bafang" },
-  { logo: 'iuc', name: 'Institut Universitaire de la Côte (IUC)' },
-  { logo: 'giz', name: 'GIZ' }
-];
+;
 
-export const partenairesTechniques = [
-  { logo: 'plan-sante-assuree', name: 'Plan Santé Assurée' },
-  { logo: 'agro-ptm', name: 'Agro PTM' },
-  { logo: 'agro-ankh', name: 'Agro-Ankh' },
-  { logo: 'efo-agro', name: 'EFO-Agro' },
-  { logo: 'adas', name: 'Amis Des Abeilles Solidaires (ADAS)' },
-  { logo: 'vergers-afrique', name: "Les Vergers d'Afrique" },
-  { logo: 'les-pepinieres', name: "Les Pépinières de l'Afrique Centrale" },
-  { logo: 'avocam', name: 'Avocam' },
-  { logo: 'ficom', name: 'Ficom S.A' },
-  { logo: 'financial-house', name: 'Financial House' },
-  { logo: 'nofia', name: 'NOFIA Microfinance' },
-  { logo: 'radd', name: 'Réseau des Acteurs du Développement Durable' },
-  { logo: 'welthungerhilfe', name: 'Welthungerhilfe' },
-  { logo: 'plats-saveurs', name: 'Plats aux Saveurs Authentiques' },
-  { logo: 'peuple-souverain', name: "Peuple Souverain d'Afrique" },
-  { logo: 'partenaires-succes', name: 'Partenaires au Succès des Affaires' },
-  { logo: 'people-security', name: 'People Security Agency' },
-  { logo: 'paradis-soins', name: 'Paradis des Soins Admirables' },
-  { logo: 'preparons-salut', name: "Préparons le Salut dans l'Amour" },
-  { logo: 'produits-agro', name: 'Produits et Services Agroalimentaires' },
-  { logo: 'phyto-solutions', name: "Phyto-Solutions d'Avenir" },
-  { logo: 'packaging-shipping', name: 'Packaging and Shipping Agency' },
-  { logo: 'preparatoire-savants', name: 'Préparatoire des Savants Acteurs' },
-  { logo: 'people-society', name: 'People & Society Advisors' },
-  { logo: 'powerful-software', name: 'Powerful Software Agency' },
-  { logo: 'gapdel', name: 'GAPDEL' }
-];
+;
 
-// team photos (static/assets/images/psa/team/), in the same order as team.members
-// in the i18n message files; '' = no photo yet (initials are shown instead)
-export const teamPhotos = [
-  'nanfack-tsafouet-magellan.jpg',
-  'tchida-sawa-merveille.jpg',
-  'chewa-donald.jpg',
-  'woumo-ornella.jpg',
-  'dongmo-elisabeth.jpg',
-  'nodem-nelie.jpg',
-  'megheho-stevine.jpg',
-  'matta-kamdem-ingrid.jpg',
-  'alokeng-nguouadjio-carlos.jpg',
-  'youdom-ronald.jpg',
-  'dlouatsa-theresa.jpg',
-  ''
-];
+;
 
 // Donations (« Nos actions sociales »)
 export const DON = {
@@ -246,25 +196,11 @@ export const DON = {
   ]
 };
 
-// Médiathèque — photos (static/assets/images/psa/photos/), caption = i18n `mediatheque.photos[i]`
-export const mediaPhotos = [
-  'equipe-psa.jpg',
-  'prestations.jpg',
-  'plants-semences.jpg',
-  'fertilisants.jpg'
-];
+;
 
-// Médiathèque — documents, title/desc = i18n `mediatheque.docs[i]`
-export const mediaDocs = [
-  { file: 'certificat-activite-semenciere.jpg', icon: 'ph-certificate' },
-  { file: 'fiche-qr-codes.jpg', icon: 'ph-qr-code' },
-  { file: 'groupe-entreprises.jpg', icon: 'ph-buildings' }
-];
+;
 
-// slug must match the `slug` field in both i18n message files
-export const posts = [
-  { slug: 'preparer-sa-pepiniere-avant-la-saison-des-pluies', image: 'blog-post-image-1.jpg' },
-  { slug: 'choisir-des-semences-adaptees-a-votre-parcelle', image: 'blog-post-image-2.jpg' },
-  { slug: 'fertilisation-organique-redonner-vie-aux-sols', image: 'blog-post-image-3.jpg' },
-  { slug: 'charbon-vegetal-actif-charvas-usages-et-bienfaits', image: 'blog-post-image-4.jpg' }
-];
+;
+
+// Blog posts, team, partners, médiathèque and the planting calendar are edited in the
+// CMS (/admin) and live in src/content/*.json — see src/lib/content.js.

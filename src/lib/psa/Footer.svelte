@@ -15,6 +15,7 @@
     [
       { href: '/actions-sociales', key: 'nav.actions' },
       { href: '/mediatheque', key: 'nav.mediatheque' },
+      { href: '/calendrier', key: 'calendar.nav' },
       { href: '/stage', key: 'stage.title' },
       { href: '/blog', key: 'nav.blog' },
       { href: '/contact', key: 'nav.contact' }

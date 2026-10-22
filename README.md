@@ -23,6 +23,7 @@ Menu : **Produits & Services · À propos · Partenaires · Actions sociales · 
 | `/alimentation-sante` | Alimentation & Santé (Plan Santé Assurée + 2 catalogues) |
 | `/blog` | Blog — liste d'articles (fil d'ariane sombre + cartes) |
 | `/blog/[slug]` | Article — prérendu depuis `posts` dans `data.js` (4 articles) |
+| `/calendrier` | Calendrier des semis (interactive, editable in the CMS) |
 | `/stage` | Stages & formation — présentation + **formulaire de candidature** (validé) |
 | `/contact` | Contact (coordonnées + carte + formulaire) |
 
@@ -80,6 +81,46 @@ recentrer. Les 8 témoignages sont dans l'i18n ; les portraits cyclent sur
   (`psa-lang`) and updates `<html lang>`. English is opt-in and then remembered.
 - Blog `[slug]` routes are prerendered from `data.js` `posts` (slugs are language-neutral
   IDs); the article body comes from the active locale's `posts` array.
+
+### Content editing (CMS) — `/admin`
+
+The PSA team edits content at **https://www.psa.com/admin** with [Sveltia CMS](https://sveltiacms.app)
+(a Decap-compatible CMS that runs in the browser). Every save is a commit on GitHub
+(`ubuntu-assist/psa-website`, branch `master`); Vercel then rebuilds the site in 1–2 minutes.
+
+| In the CMS | File | Shown on |
+| --- | --- | --- |
+| Blog (one entry per article, Markdown body, FR/EN) | `src/content/blog/*.json` | `/blog`, `/blog/[slug]`, home « Actualités », sitemap |
+| Équipe | `src/content/team.json` | `/a-propos` |
+| Partenaires (institutional / technical, logo + optional website) | `src/content/partners.json` | `/partenaires`, home ribbon |
+| Médiathèque (documents, photos, YouTube videos) | `src/content/mediatheque.json` | `/mediatheque` |
+| Calendrier des semis (crops × months) | `src/content/calendar.json` | `/calendrier`, home « Que semer ce mois-ci ? » |
+
+- Files use Sveltia's `single_file` i18n layout (`{ "fr": {…}, "en": {…} }`); `src/lib/content.js`
+  loads them and falls back to French for anything left empty in English.
+- Uploads go to `static/assets/images/psa/uploads/`. Config: `static/admin/config.yml`.
+- **Sign-in:** « Sign In with GitHub » uses this site's own OAuth endpoints (`/api/auth`,
+  `/api/auth/callback`). Create a GitHub OAuth App (callback `https://www.psa.com/api/auth/callback`)
+  and set `GITHUB_OAUTH_ID` / `GITHUB_OAUTH_SECRET` in Vercel. Each editor needs a GitHub account
+  with write access to the repository. « Sign In Using Access Token » works without the OAuth App.
+- UI chrome text (buttons, headings, page copy) still lives in `src/lib/i18n/messages/{fr,en}.js`.
+
+### SEO & link previews
+
+- `src/lib/psa/Seo.svelte` on every page: title, description (FR/EN, ≤ 160 chars), canonical URL,
+  Open Graph + Twitter tags, 1200×630 share image. Blog posts use their cover image and add
+  `BlogPosting` structured data.
+- Site-wide `LocalBusiness` + `GardenStore` JSON-LD (address, phones, email, hours, Google Maps
+  links, social profiles) in `src/routes/(psa)/+layout.svelte`; business facts in `data.js` (`BUSINESS`).
+- `/sitemap.xml` (pages + blog posts) and `/robots.txt` are prerendered. The leftover Servibe
+  template routes are `noindex`.
+- Share images: `npm run og` regenerates `static/og/*.jpg` with headless Chrome.
+
+### Planting calendar — `/calendrier`
+
+Month picker + category filter, « à semer / à récolter » cards with a WhatsApp order link
+pre-filled with the crop and month, and a year grid (sowing / nursery / planting / harvest per
+crop, with the dry season and the two rainy cycles of the West highlands). Data: `src/content/calendar.json`.
 
 ### Emails (Resend)
 

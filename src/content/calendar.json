@@ -1,0 +1,46 @@
+{
+  "fr": {
+    "intro": "Repères indicatifs pour les hautes terres de l'Ouest (Dschang, ≈ 1 400 m) : saison des pluies de mi-mars à mi-novembre en deux cycles, saison sèche de mi-novembre à mi-mars (contre-saison maraîchère irriguée en bas-fonds). Les dates varient selon l'altitude, la pluviométrie de l'année et la variété : demandez conseil à notre équipe.",
+    "crops": [
+      { "name": "Maïs", "category": "vivrier", "sow": [3, 4, 8], "nursery": [], "plant": [], "harvest": [7, 8, 11, 12], "tip": "Semez dès que les pluies sont bien installées (sol humide sur 10 cm). Deuxième cycle possible en août pour une récolte en fin d'année." },
+      { "name": "Haricot", "category": "vivrier", "sow": [3, 4, 8, 9], "nursery": [], "plant": [], "harvest": [6, 7, 11], "tip": "Cycle court (≈ 90 jours) : idéal en association avec le maïs ou en second cycle." },
+      { "name": "Arachide", "category": "vivrier", "sow": [3, 4], "nursery": [], "plant": [], "harvest": [7, 8], "tip": "Préfère les sols légers et bien drainés. Récoltez quand les feuilles jaunissent." },
+      { "name": "Pomme de terre", "category": "vivrier", "sow": [], "nursery": [], "plant": [3, 4, 8, 9, 11], "harvest": [6, 7, 11, 12, 2], "tip": "Deux cycles en saison des pluies, plus une contre-saison en bas-fonds irrigués (plantation en novembre). Utilisez des semenceaux sains." },
+      { "name": "Macabo / taro", "category": "vivrier", "sow": [], "nursery": [], "plant": [3, 4], "harvest": [10, 11, 12, 1], "tip": "Plantez en début de saison des pluies ; récolte 8 à 10 mois plus tard." },
+      { "name": "Igname", "category": "vivrier", "sow": [], "nursery": [], "plant": [2, 3], "harvest": [10, 11, 12], "tip": "Plantez juste avant les premières pluies sur buttes ou billons." },
+      { "name": "Tomate", "category": "maraicher", "sow": [], "nursery": [1, 2, 7, 8], "plant": [2, 3, 8, 9], "harvest": [5, 6, 7, 11, 12], "tip": "Pépinière 3 à 4 semaines avant repiquage. La contre-saison irriguée limite le mildiou, fréquent au cœur des pluies." },
+      { "name": "Piment", "category": "maraicher", "sow": [], "nursery": [2, 3], "plant": [4, 5], "harvest": [7, 8, 9, 10, 11], "tip": "Repiquez au début des pluies ; récoltes échelonnées pendant plusieurs mois." },
+      { "name": "Chou", "category": "maraicher", "sow": [], "nursery": [7, 8, 10], "plant": [8, 9, 11], "harvest": [11, 12, 1, 2], "tip": "Aime la fraîcheur de l'altitude : idéal en fin de saison des pluies et en contre-saison." },
+      { "name": "Carotte", "category": "maraicher", "sow": [8, 9, 10, 11], "nursery": [], "plant": [], "harvest": [11, 12, 1, 2], "tip": "Semis direct en sol meuble et profond ; éclaircissez à 5 cm." },
+      { "name": "Oignon", "category": "maraicher", "sow": [], "nursery": [9, 10], "plant": [11], "harvest": [2, 3], "tip": "Culture de saison sèche avec irrigation ; arrêtez l'arrosage 2 semaines avant récolte." },
+      { "name": "Gombo", "category": "maraicher", "sow": [3, 4, 5], "nursery": [], "plant": [], "harvest": [5, 6, 7, 8, 9], "tip": "Semis direct au début des pluies ; cueillez les fruits jeunes tous les 2 à 3 jours." },
+      { "name": "Morelle (njama-njama)", "category": "maraicher", "sow": [3, 4, 5, 6, 7, 8, 9, 10], "nursery": [], "plant": [], "harvest": [4, 5, 6, 7, 8, 9, 10, 11], "tip": "Semis échelonnés toute la saison des pluies pour récolter en continu." },
+      { "name": "Avocatier greffé", "category": "fruitier", "sow": [], "nursery": [], "plant": [4, 5, 6], "harvest": [6, 7, 8, 9], "tip": "Plantez en début de saison des pluies pour un bon enracinement. Premières récoltes 3 à 4 ans après plantation." },
+      { "name": "Safoutier", "category": "fruitier", "sow": [], "nursery": [], "plant": [4, 5, 6], "harvest": [6, 7, 8], "tip": "Les plants greffés entrent en production plus tôt et donnent des fruits homogènes." },
+      { "name": "Agrumes", "category": "fruitier", "sow": [], "nursery": [], "plant": [4, 5, 6], "harvest": [10, 11, 12, 1], "tip": "Trou de plantation large (60 cm) enrichi en compost ; arrosez la première saison sèche." },
+      { "name": "Caféier arabica", "category": "rente", "sow": [], "nursery": [], "plant": [4, 5, 6], "harvest": [10, 11, 12], "tip": "Culture phare de l'Ouest en altitude ; ombrage léger recommandé pour les jeunes plants." }
+    ]
+  },
+  "en": {
+    "intro": "Indicative guide for the West Cameroon highlands (Dschang, ≈ 1,400 m): rainy season from mid-March to mid-November in two cycles, dry season from mid-November to mid-March (irrigated off-season vegetable growing in lowlands). Dates vary with altitude, the year's rainfall and the variety: ask our team for advice.",
+    "crops": [
+      { "name": "Maize", "category": "vivrier", "sow": [3, 4, 8], "nursery": [], "plant": [], "harvest": [7, 8, 11, 12], "tip": "Sow once the rains are well established (soil moist to 10 cm). A second cycle in August gives a year-end harvest." },
+      { "name": "Beans", "category": "vivrier", "sow": [3, 4, 8, 9], "nursery": [], "plant": [], "harvest": [6, 7, 11], "tip": "Short cycle (≈ 90 days): ideal intercropped with maize or as a second cycle." },
+      { "name": "Groundnut", "category": "vivrier", "sow": [3, 4], "nursery": [], "plant": [], "harvest": [7, 8], "tip": "Prefers light, well-drained soils. Harvest when the leaves turn yellow." },
+      { "name": "Potato", "category": "vivrier", "sow": [], "nursery": [], "plant": [3, 4, 8, 9, 11], "harvest": [6, 7, 11, 12, 2], "tip": "Two rainy-season cycles, plus an irrigated off-season in lowlands (planted in November). Use healthy seed tubers." },
+      { "name": "Cocoyam / taro", "category": "vivrier", "sow": [], "nursery": [], "plant": [3, 4], "harvest": [10, 11, 12, 1], "tip": "Plant at the start of the rainy season; harvest 8 to 10 months later." },
+      { "name": "Yam", "category": "vivrier", "sow": [], "nursery": [], "plant": [2, 3], "harvest": [10, 11, 12], "tip": "Plant just before the first rains, on mounds or ridges." },
+      { "name": "Tomato", "category": "maraicher", "sow": [], "nursery": [1, 2, 7, 8], "plant": [2, 3, 8, 9], "harvest": [5, 6, 7, 11, 12], "tip": "Nursery 3 to 4 weeks before transplanting. An irrigated off-season limits blight, common at the height of the rains." },
+      { "name": "Chilli pepper", "category": "maraicher", "sow": [], "nursery": [2, 3], "plant": [4, 5], "harvest": [7, 8, 9, 10, 11], "tip": "Transplant at the start of the rains; harvests are spread over several months." },
+      { "name": "Cabbage", "category": "maraicher", "sow": [], "nursery": [7, 8, 10], "plant": [8, 9, 11], "harvest": [11, 12, 1, 2], "tip": "Loves the cool highlands: ideal at the end of the rainy season and in the off-season." },
+      { "name": "Carrot", "category": "maraicher", "sow": [8, 9, 10, 11], "nursery": [], "plant": [], "harvest": [11, 12, 1, 2], "tip": "Direct sowing in loose, deep soil; thin to 5 cm." },
+      { "name": "Onion", "category": "maraicher", "sow": [], "nursery": [9, 10], "plant": [11], "harvest": [2, 3], "tip": "Dry-season crop with irrigation; stop watering 2 weeks before harvest." },
+      { "name": "Okra", "category": "maraicher", "sow": [3, 4, 5], "nursery": [], "plant": [], "harvest": [5, 6, 7, 8, 9], "tip": "Direct sowing at the start of the rains; pick young pods every 2 to 3 days." },
+      { "name": "Huckleberry (njama-njama)", "category": "maraicher", "sow": [3, 4, 5, 6, 7, 8, 9, 10], "nursery": [], "plant": [], "harvest": [4, 5, 6, 7, 8, 9, 10, 11], "tip": "Stagger sowings throughout the rainy season for a continuous harvest." },
+      { "name": "Grafted avocado", "category": "fruitier", "sow": [], "nursery": [], "plant": [4, 5, 6], "harvest": [6, 7, 8, 9], "tip": "Plant at the start of the rainy season for good rooting. First harvests 3 to 4 years after planting." },
+      { "name": "Safou (African plum)", "category": "fruitier", "sow": [], "nursery": [], "plant": [4, 5, 6], "harvest": [6, 7, 8], "tip": "Grafted seedlings bear fruit earlier and more uniformly." },
+      { "name": "Citrus", "category": "fruitier", "sow": [], "nursery": [], "plant": [4, 5, 6], "harvest": [10, 11, 12, 1], "tip": "Wide planting hole (60 cm) enriched with compost; water through the first dry season." },
+      { "name": "Arabica coffee", "category": "rente", "sow": [], "nursery": [], "plant": [4, 5, 6], "harvest": [10, 11, 12], "tip": "Flagship highland crop of the West; light shade recommended for young plants." }
+    ]
+  }
+}

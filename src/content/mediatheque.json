@@ -1,0 +1,78 @@
+{
+  "fr": {
+    "docs": [
+      {
+        "title": "Certificat d'exercice de l'activité semencière",
+        "text": "Délivré par le MINADER (juin 2023).",
+        "file": "/assets/images/psa/photos/certificat-activite-semenciere.jpg"
+      },
+      {
+        "title": "Scanner pour nous retrouver",
+        "text": "Fiche des onze QR codes de nos services et plateformes.",
+        "file": "/assets/images/psa/photos/fiche-qr-codes.jpg"
+      },
+      {
+        "title": "Les entreprises du groupe",
+        "text": "« Pensons et semons l’avenir » — les structures sœurs de PSA.",
+        "file": "/assets/images/psa/photos/groupe-entreprises.jpg"
+      }
+    ],
+    "photos": [
+      {
+        "image": "/assets/images/psa/photos/equipe-psa.jpg",
+        "caption": "L'équipe de Pépinière Semences d'Avenir"
+      },
+      {
+        "image": "/assets/images/psa/photos/prestations.jpg",
+        "caption": "Prestations agricoles sur le terrain"
+      },
+      {
+        "image": "/assets/images/psa/photos/plants-semences.jpg",
+        "caption": "Plants et semences"
+      },
+      {
+        "image": "/assets/images/psa/photos/fertilisants.jpg",
+        "caption": "Fertilisants et protecteurs des cultures : MU BOOST et compost naturel"
+      }
+    ],
+    "videos": []
+  },
+  "en": {
+    "docs": [
+      {
+        "title": "Seed-activity operating certificate",
+        "text": "Issued by MINADER (June 2023).",
+        "file": "/assets/images/psa/photos/certificat-activite-semenciere.jpg"
+      },
+      {
+        "title": "Scan to find us",
+        "text": "Sheet with the eleven QR codes for our services and platforms.",
+        "file": "/assets/images/psa/photos/fiche-qr-codes.jpg"
+      },
+      {
+        "title": "The group companies",
+        "text": "“Pensons et semons l’avenir” — PSA’s sister organisations.",
+        "file": "/assets/images/psa/photos/groupe-entreprises.jpg"
+      }
+    ],
+    "photos": [
+      {
+        "image": "/assets/images/psa/photos/equipe-psa.jpg",
+        "caption": "The Pépinière Semences d'Avenir team"
+      },
+      {
+        "image": "/assets/images/psa/photos/prestations.jpg",
+        "caption": "Agricultural services in the field"
+      },
+      {
+        "image": "/assets/images/psa/photos/plants-semences.jpg",
+        "caption": "Seeds and seedlings"
+      },
+      {
+        "image": "/assets/images/psa/photos/fertilisants.jpg",
+        "caption": "Fertilisers and crop protectants: MU BOOST and natural compost"
+      }
+    ],
+    "videos": []
+  }
+}

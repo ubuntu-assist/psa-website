@@ -10,7 +10,8 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "format": "prettier --write .",
     "lint": "prettier --check .",
-    "qr": "node scripts/generate-qr.mjs"
+    "qr": "node scripts/generate-qr.mjs",
+    "og": "node scripts/generate-og.mjs"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.10",
@@ -32,6 +33,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "libphonenumber-js": "^1.13.12",
+    "marked": "^15.0.12",
     "resend": "^6.34.1",
     "svelte-i18n": "^4.0.1",
     "sveltekit-superforms": "^2.30.2",

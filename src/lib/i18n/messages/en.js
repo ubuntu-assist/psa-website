@@ -12,6 +12,7 @@ export default {
     partenaires: 'Partners',
     actions: 'Social action',
     mediatheque: 'Media library',
+    calendrier: 'Calendar',
     sante: 'Food & Health',
     blog: 'Blog',
     contact: 'Contact',
@@ -35,6 +36,46 @@ export default {
     temoignagesKicker: 'Testimonials',
     actusKicker: 'Journal',
     scanKicker: 'Stay connected'
+  },
+
+  calendar: {
+    nav: 'Planting calendar',
+    title: 'Planting calendar',
+    subtitle: 'What to sow, plant and harvest each month in the West Cameroon highlands.',
+    thisMonth: 'This month',
+    pickMonth: 'Pick a month',
+    toSow: 'To sow and plant',
+    toHarvest: 'To harvest',
+    none: 'Nothing planned this month for this group: prepare your plots and your nursery.',
+    yearTitlePre: 'The ',
+    yearTitleEm: 'year at a glance',
+    all: 'All',
+    categories: { vivrier: 'Food crops', maraicher: 'Vegetables', fruitier: 'Fruit trees', rente: 'Cash crops' },
+    phases: { sow: 'Direct sowing', nursery: 'Nursery', plant: 'Planting / transplanting', harvest: 'Harvest' },
+    seasons: { dry: 'Dry season', rain1: '1st rainy cycle', rain2: '2nd rainy cycle' },
+    crop: 'Crop',
+    tip: 'Tip',
+    order: 'Order on WhatsApp',
+    orderMsg: 'Hello, I would like {crop} seeds / seedlings for {month}. Could you advise me?',
+    scrollHint: 'Scroll the table sideways',
+    teaserTitlePre: 'What to sow ',
+    teaserTitleEm: 'in {month}?',
+    teaserCta: 'See the full calendar',
+    adviceTitle: 'Need personalised advice?',
+    adviceText: 'Altitude, soil, variety: our agronomists adapt these guidelines to your plot.'
+  },
+
+  seo: {
+    produits: "Certified seeds and seedlings, fertilisers and crop protectants, herbal teas and honey, naturopathy, equipment, training and farm services in Dschang, Cameroon.",
+    apropos: "Pépinière Semences d'Avenir (PSA), Dschang, since 2014: vision, mission, values, MINADER certificate and a team serving growers across Central Africa.",
+    partenaires: "PSA's institutional and technical partners: MINADER, University of Dschang, GIZ, Enabel, AUF, Caritas and some forty rural-development organisations.",
+    actions: "Seed donations, free mentoring of 350 interns, job integration: discover PSA's social action and support it by MoMo, Orange Money or bank transfer.",
+    mediatheque: "Official documents, photos and videos from Pépinière Semences d'Avenir: MINADER certificate, QR codes and behind the scenes at the Dschang nursery.",
+    sante: "Medicinal herbal teas, natural honey, CHARVAS activated charcoal, naturopathy and equipment: the Food & Health line of PSA in Dschang, Cameroon.",
+    contact: "Contact Pépinière Semences d'Avenir in Dschang: WhatsApp +237 690 81 08 73, email contact@psa.com, seed and seedling sites on Google Maps.",
+    stage: "Hands-on internships and training in nursery work, market gardening, seed production and naturopathy in Dschang. Free mentoring: apply online.",
+    calendrier: "Planting calendar for West Cameroon: what to sow, plant and harvest each month (maize, beans, tomato, cabbage, avocado…). Advice and orders on WhatsApp.",
+    blog: "Nursery advice, fertilisation, choosing seeds and natural health: the journal of Pépinière Semences d'Avenir in Dschang, Cameroon."
   },
 
   common: {
@@ -544,23 +585,6 @@ export default {
     titleEm: 'your seeds and seedlings',
     para: 'A multidisciplinary team of engineers, nursery technicians, lab staff and managers — serving growers.',
     groupAlt: "Group photo of the Pépinière Semences d'Avenir team",
-    members: [
-      { nom: 'Eng. NANFACK TSAFOUET Magellan', poste: 'Managing and Sales Director' },
-      { nom: 'TCHIDA SAWA Merveille', poste: 'Head of the herbal medicine laboratory' },
-      { nom: 'CHEWA Donald', poste: 'Head of marketing and sales' },
-      { nom: 'WOUMO Ornella', poste: 'Executive assistant' },
-      { nom: 'DONGMO Elisabeth', poste: 'Head of hygiene and sanitation' },
-      { nom: 'NODEM Nelie', poste: 'Head of the Semences d’Avenir seed laboratory' },
-      { nom: 'MEGHEHO Stevine', poste: 'Intern, naturopathy consultation and follow-up' },
-      {
-        nom: 'MATTA KAMDEM Ingrid',
-        poste: 'Head of the MINADER-site nursery and the Phyto-Solutions d’Avenir lab'
-      },
-      { nom: 'ALOKENG NGUOUADJIO Carlos', poste: 'Head of the Tsinfem-site nursery' },
-      { nom: 'YOUDOM Ronald', poste: 'Nursery assistant' },
-      { nom: 'DLOUATSA Theresa', poste: 'Manager of the PER ANKH shop' },
-      { nom: 'TONFACK Cyrielle', poste: 'Head of accounting and finance' }
-    ]
   },
 
   actionsPage: {
@@ -612,27 +636,7 @@ export default {
     title: 'Library & media',
     subtitle: "Documents, photos and videos from Pépinière Semences d'Avenir.",
     tabs: { docs: 'Documents', photos: 'Photos', videos: 'Videos' },
-    docs: [
-      {
-        titre: 'Seed-activity operating certificate',
-        texte: 'Issued by MINADER (June 2023).'
-      },
-      {
-        titre: 'Scan to find us',
-        texte: 'Sheet with the eleven QR codes for our services and platforms.'
-      },
-      {
-        titre: 'The group companies',
-        texte: '“Pensons et semons l’avenir” — PSA’s sister organisations.'
-      }
-    ],
     openDoc: 'Open',
-    photos: [
-      "The Pépinière Semences d'Avenir team",
-      'Agricultural services in the field',
-      'Seeds and seedlings',
-      'Fertilisers and crop protectants: MU BOOST and natural compost'
-    ],
     videosTitle: 'Our videos',
     videosText:
       'Reports, tutorials and behind-the-scenes at the nursery: find all our videos on our channels.',
@@ -819,123 +823,5 @@ export default {
       quoteName: 'Former intern',
       quoteRole: '2024 cohort'
     }
-  },
-
-  posts: [
-    {
-      slug: 'preparer-sa-pepiniere-avant-la-saison-des-pluies',
-      titre: 'Preparing your nursery before the rainy season',
-      categorie: 'Nursery tips',
-      date: 'March 12, 2026',
-      extrait:
-        'Substrate, shading, sowing calendar: the key steps for vigorous seedlings as soon as the first rains arrive.',
-      corps: [
-        {
-          type: 'p',
-          text: 'A season is largely won before sowing. A well-prepared nursery produces healthy, uniform seedlings ready to transplant at the right time.'
-        },
-        { type: 'h', text: 'Choosing and preparing the substrate' },
-        {
-          type: 'p',
-          text: 'A good nursery substrate is loose, free-draining and rich in well-decomposed organic matter. Avoid soil taken from under diseased crops; mix topsoil, mature compost and a little sand for aeration.'
-        },
-        { type: 'h', text: 'Managing shading and watering' },
-        {
-          type: 'p',
-          text: 'Light shading protects young seedlings from midday sun without making them leggy. Watering should be regular but moderate: too much water encourages damping-off.'
-        },
-        { type: 'h', text: 'Planning the calendar' },
-        {
-          type: 'p',
-          text: 'Count the days between sowing and transplanting for each species, and work back from the desired planting date. Our teams help you build this calendar for your plot.'
-        }
-      ]
-    },
-    {
-      slug: 'choisir-des-semences-adaptees-a-votre-parcelle',
-      titre: 'How to choose seeds suited to your plot',
-      categorie: 'Seeds',
-      date: 'February 3, 2026',
-      extrait:
-        'Altitude, soil type, disease pressure, market outlet: the criteria for choosing your varieties well.',
-      corps: [
-        {
-          type: 'p',
-          text: 'Not all varieties perform equally in a given context. A considered choice limits risk and improves yield.'
-        },
-        { type: 'h', text: 'Know your environment' },
-        {
-          type: 'p',
-          text: 'The altitude and rainfall of the West Region suit many vegetable and food crops, but some varieties are hardier than others there. Soil type (clay, sandy) also guides the choice.'
-        },
-        { type: 'h', text: 'Check disease tolerance' },
-        {
-          type: 'p',
-          text: 'Favour varieties tolerant to locally common diseases: this reduces treatments and secures production.'
-        },
-        { type: 'h', text: 'Think about the market' },
-        {
-          type: 'p',
-          text: 'Size, colour, shelf life: the ideal variety also depends on your market. Tell us about your project and we will point you to the most suitable certified seeds.'
-        }
-      ]
-    },
-    {
-      slug: 'fertilisation-organique-redonner-vie-aux-sols',
-      titre: 'Organic fertilisation: bringing soils back to life',
-      categorie: 'Soil fertility',
-      date: 'January 18, 2026',
-      extrait:
-        'Compost, green manures and amendments: a sustainable approach to restore fertility without exhausting the land.',
-      corps: [
-        {
-          type: 'p',
-          text: 'Tired soils give fragile crops. Organic fertilisation feeds both the plant and the life of the soil.'
-        },
-        { type: 'h', text: 'Compost, the foundation' },
-        {
-          type: 'p',
-          text: 'Well-managed compost provides stable organic matter that improves structure, water retention and biological activity in the soil.'
-        },
-        { type: 'h', text: 'Green manures' },
-        {
-          type: 'p',
-          text: 'Sown between two crops, green manures protect the soil, limit weeds and, once incorporated, return nitrogen and organic matter.'
-        },
-        { type: 'h', text: 'Our ecological amendments' },
-        {
-          type: 'p',
-          text: "Pépinière Semences d'Avenir offers a range of amendments and bio-protectants compliant with organic farming, with usage advice tailored to your crop."
-        }
-      ]
-    },
-    {
-      slug: 'charbon-vegetal-actif-charvas-usages-et-bienfaits',
-      titre: 'Activated vegetable charcoal (CHARVAS): uses and benefits',
-      categorie: 'Assured Health Plan',
-      date: 'December 9, 2025',
-      extrait:
-        'A closer look at a flagship product of the Food & Health line: what CHARVAS is and how to use it.',
-      corps: [
-        {
-          type: 'p',
-          text: 'Activated vegetable charcoal is obtained by carbonising then activating plant matter. Its highly porous structure gives it strong adsorption power.'
-        },
-        { type: 'h', text: 'Varied uses' },
-        {
-          type: 'p',
-          text: 'It is traditionally used for digestive comfort and hygiene. It is also found in filtration and purification.'
-        },
-        { type: 'h', text: 'Choosing it well' },
-        {
-          type: 'p',
-          text: 'Quality depends on the raw material and the activation process. The CHARVAS in our “Assured Health Plan” line is selected for food and hygiene use.'
-        },
-        {
-          type: 'p',
-          text: 'Find this product and our usage advice via the Food & Health catalogue on WhatsApp.'
-        }
-      ]
-    }
-  ]
+  }
 };

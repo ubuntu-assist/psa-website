@@ -1,0 +1,251 @@
+{
+  "institutional": [
+    {
+      "name": "Conseil National de la Jeunesse du Cameroun (CNJC)",
+      "logo": "/assets/images/psa/partners/cnjc.png",
+      "url": ""
+    },
+    {
+      "name": "Caritas Cameroon",
+      "logo": "/assets/images/psa/partners/caritas-cameroon.png",
+      "url": ""
+    },
+    {
+      "name": "Agence Universitaire de la Francophonie (AUF)",
+      "logo": "/assets/images/psa/partners/auf.png",
+      "url": ""
+    },
+    {
+      "name": "Université de Dschang",
+      "logo": "/assets/images/psa/partners/universite-dschang.png",
+      "url": ""
+    },
+    {
+      "name": "Faculté d'Agronomie et des Sciences Agricoles (FASA)",
+      "logo": "/assets/images/psa/partners/fasa.png",
+      "url": ""
+    },
+    {
+      "name": "Commune de Dschang",
+      "logo": "/assets/images/psa/partners/commune-dschang.png",
+      "url": ""
+    },
+    {
+      "name": "MINJEC",
+      "logo": "/assets/images/psa/partners/minjec.png",
+      "url": ""
+    },
+    {
+      "name": "SPG ETSO MBONG",
+      "logo": "/assets/images/psa/partners/spg-etso-mbong.png",
+      "url": ""
+    },
+    {
+      "name": "MINADER",
+      "logo": "/assets/images/psa/partners/minader.png",
+      "url": ""
+    },
+    {
+      "name": "Groupement d'Appui pour le Développement Durable (GADD)",
+      "logo": "/assets/images/psa/partners/gadd.png",
+      "url": ""
+    },
+    {
+      "name": "GAPDEL",
+      "logo": "/assets/images/psa/partners/gapdel.png",
+      "url": ""
+    },
+    {
+      "name": "Enabel",
+      "logo": "/assets/images/psa/partners/enabel.png",
+      "url": ""
+    },
+    {
+      "name": "AFSA",
+      "logo": "/assets/images/psa/partners/afsa.png",
+      "url": ""
+    },
+    {
+      "name": "CATI² — Université de Douala",
+      "logo": "/assets/images/psa/partners/cati.png",
+      "url": ""
+    },
+    {
+      "name": "Action Sociale Africaine (ASA)",
+      "logo": "/assets/images/psa/partners/asa.png",
+      "url": ""
+    },
+    {
+      "name": "Agri-Business vocational training Center (ABC)",
+      "logo": "/assets/images/psa/partners/abc-cameroon.png",
+      "url": ""
+    },
+    {
+      "name": "CODAS/Caritas — Diocèse de Bafoussam",
+      "logo": "/assets/images/psa/partners/codas-caritas.png",
+      "url": ""
+    },
+    {
+      "name": "Concern Worldwide",
+      "logo": "/assets/images/psa/partners/concern.png",
+      "url": ""
+    },
+    {
+      "name": "IUGET",
+      "logo": "/assets/images/psa/partners/iuget.png",
+      "url": ""
+    },
+    {
+      "name": "Business and Career University (BCU)",
+      "logo": "/assets/images/psa/partners/bcu.png",
+      "url": ""
+    },
+    {
+      "name": "École Technique d'Agriculture de Bafang",
+      "logo": "/assets/images/psa/partners/eta-bafang.png",
+      "url": ""
+    },
+    {
+      "name": "Institut Universitaire de la Côte (IUC)",
+      "logo": "/assets/images/psa/partners/iuc.png",
+      "url": ""
+    },
+    {
+      "name": "GIZ",
+      "logo": "/assets/images/psa/partners/giz.png",
+      "url": ""
+    }
+  ],
+  "technical": [
+    {
+      "name": "Plan Santé Assurée",
+      "logo": "/assets/images/psa/partners/plan-sante-assuree.png",
+      "url": ""
+    },
+    {
+      "name": "Agro PTM",
+      "logo": "/assets/images/psa/partners/agro-ptm.png",
+      "url": ""
+    },
+    {
+      "name": "Agro-Ankh",
+      "logo": "/assets/images/psa/partners/agro-ankh.png",
+      "url": ""
+    },
+    {
+      "name": "EFO-Agro",
+      "logo": "/assets/images/psa/partners/efo-agro.png",
+      "url": ""
+    },
+    {
+      "name": "Amis Des Abeilles Solidaires (ADAS)",
+      "logo": "/assets/images/psa/partners/adas.png",
+      "url": ""
+    },
+    {
+      "name": "Les Vergers d'Afrique",
+      "logo": "/assets/images/psa/partners/vergers-afrique.png",
+      "url": ""
+    },
+    {
+      "name": "Les Pépinières de l'Afrique Centrale",
+      "logo": "/assets/images/psa/partners/les-pepinieres.png",
+      "url": ""
+    },
+    {
+      "name": "Avocam",
+      "logo": "/assets/images/psa/partners/avocam.png",
+      "url": ""
+    },
+    {
+      "name": "Ficom S.A",
+      "logo": "/assets/images/psa/partners/ficom.png",
+      "url": ""
+    },
+    {
+      "name": "Financial House",
+      "logo": "/assets/images/psa/partners/financial-house.png",
+      "url": ""
+    },
+    {
+      "name": "NOFIA Microfinance",
+      "logo": "/assets/images/psa/partners/nofia.png",
+      "url": ""
+    },
+    {
+      "name": "Réseau des Acteurs du Développement Durable",
+      "logo": "/assets/images/psa/partners/radd.png",
+      "url": ""
+    },
+    {
+      "name": "Welthungerhilfe",
+      "logo": "/assets/images/psa/partners/welthungerhilfe.png",
+      "url": ""
+    },
+    {
+      "name": "Plats aux Saveurs Authentiques",
+      "logo": "/assets/images/psa/partners/plats-saveurs.png",
+      "url": ""
+    },
+    {
+      "name": "Peuple Souverain d'Afrique",
+      "logo": "/assets/images/psa/partners/peuple-souverain.png",
+      "url": ""
+    },
+    {
+      "name": "Partenaires au Succès des Affaires",
+      "logo": "/assets/images/psa/partners/partenaires-succes.png",
+      "url": ""
+    },
+    {
+      "name": "People Security Agency",
+      "logo": "/assets/images/psa/partners/people-security.png",
+      "url": ""
+    },
+    {
+      "name": "Paradis des Soins Admirables",
+      "logo": "/assets/images/psa/partners/paradis-soins.png",
+      "url": ""
+    },
+    {
+      "name": "Préparons le Salut dans l'Amour",
+      "logo": "/assets/images/psa/partners/preparons-salut.png",
+      "url": ""
+    },
+    {
+      "name": "Produits et Services Agroalimentaires",
+      "logo": "/assets/images/psa/partners/produits-agro.png",
+      "url": ""
+    },
+    {
+      "name": "Phyto-Solutions d'Avenir",
+      "logo": "/assets/images/psa/partners/phyto-solutions.png",
+      "url": ""
+    },
+    {
+      "name": "Packaging and Shipping Agency",
+      "logo": "/assets/images/psa/partners/packaging-shipping.png",
+      "url": ""
+    },
+    {
+      "name": "Préparatoire des Savants Acteurs",
+      "logo": "/assets/images/psa/partners/preparatoire-savants.png",
+      "url": ""
+    },
+    {
+      "name": "People & Society Advisors",
+      "logo": "/assets/images/psa/partners/people-society.png",
+      "url": ""
+    },
+    {
+      "name": "Powerful Software Agency",
+      "logo": "/assets/images/psa/partners/powerful-software.png",
+      "url": ""
+    },
+    {
+      "name": "GAPDEL",
+      "logo": "/assets/images/psa/partners/gapdel.png",
+      "url": ""
+    }
+  ]
+}

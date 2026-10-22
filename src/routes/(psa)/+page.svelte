@@ -1,5 +1,8 @@
 <script>
-  import { _, json } from 'svelte-i18n';
+  import { _, json, locale } from 'svelte-i18n';
+  import Seo from '$lib/psa/Seo.svelte';
+  import CalendarTeaser from '$lib/psa/CalendarTeaser.svelte';
+  import { getPosts } from '$lib/content.js';
   import HowItWorks from '$lib/psa/HowItWorks.svelte';
   import Faq from '$lib/psa/Faq.svelte';
   import CtaBand from '$lib/psa/CtaBand.svelte';
@@ -15,7 +18,6 @@
     categories as catCfg,
     certifsIcons,
     pourquoiIcons,
-    posts as postsCfg,
     waAgri
   } from '$lib/psa/data.js';
 
@@ -27,9 +29,7 @@
   const pourquoi = $derived(arr('pourquoi.items').map((t, i) => ({ icon: pourquoiIcons[i], ...t })));
   const certifs = $derived(arr('certifs').map((t, i) => ({ icon: certifsIcons[i], ...t })));
   const stats = $derived(/** @type {{value:string,label:string}[]} */ (arr('stats.items')));
-  const posts = $derived(
-    arr('posts').map((t) => ({ ...postsCfg.find((c) => c.slug === t.slug), ...t }))
-  );
+  const posts = $derived(getPosts($locale));
 
   // bento layout for the 7 categories (4-col grid, 3 rows on desktop)
   const bento = [
@@ -43,10 +43,7 @@
   ];
 </script>
 
-<svelte:head>
-  <title>{$_('meta.homeTitle')}</title>
-  <meta name="description" content={$_('meta.homeDesc')} />
-</svelte:head>
+<Seo title={$_('meta.homeTitle')} description={$_('meta.homeDesc')} image="/og/home.jpg" />
 
 <!-- ═══ HERO ═══ -->
 <section class="grain pat-field overflow-hidden bg-cream">
@@ -250,6 +247,9 @@
     </div>
   </div>
 </section>
+
+<!-- ═══ CALENDRIER — ce mois-ci ═══ -->
+<CalendarTeaser />
 
 <!-- ═══ 03 — POURQUOI PSA ═══ -->
 <section class="s-pad">

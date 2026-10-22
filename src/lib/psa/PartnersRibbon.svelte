@@ -1,9 +1,10 @@
 <script>
   import { _ } from 'svelte-i18n';
-  import { partenairesInstitutionnels, partenairesTechniques } from './data.js';
+  import { getPartners } from '$lib/content.js';
 
   // doubled lists -> seamless CSS marquee (track animates 0 -> -50%)
-  const bands = [partenairesInstitutionnels, partenairesTechniques].map((l) => ({
+  const { institutional, technical } = getPartners();
+  const bands = [institutional, technical].map((l) => ({
     count: l.length,
     items: [...l, ...l]
   }));
@@ -34,7 +35,7 @@
             aria-hidden={i >= bands[0].count ? 'true' : undefined}
           >
             <img
-              src="/assets/images/psa/partners/{p.logo}.png"
+              src={p.logo}
               alt={i >= bands[0].count ? '' : p.name}
               title={p.name}
               class="h-12 w-auto max-w-[160px] object-contain md:h-16"
@@ -55,7 +56,7 @@
             aria-hidden={i >= bands[1].count ? 'true' : undefined}
           >
             <img
-              src="/assets/images/psa/partners/{p.logo}.png"
+              src={p.logo}
               alt={i >= bands[1].count ? '' : p.name}
               title={p.name}
               class="h-12 w-auto max-w-[160px] object-contain md:h-16"

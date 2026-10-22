@@ -20,12 +20,10 @@
       // clipboard unavailable (insecure context / denied) — the value stays selectable
     }
   };
+  import Seo from '$lib/psa/Seo.svelte';
 </script>
 
-<svelte:head>
-  <title>{$_('actionsPage.metaTitle')}</title>
-  <meta name="description" content={$_('actionsPage.subtitle')} />
-</svelte:head>
+<Seo title={$_('actionsPage.title')} description={$_('seo.actions')} image="/og/actions-sociales.jpg" />
 
 {#snippet copyBtn(/** @type {string} */ key, /** @type {string} */ value, /** @type {boolean} */ dark = false)}
   <button

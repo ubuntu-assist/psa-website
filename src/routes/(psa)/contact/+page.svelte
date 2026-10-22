@@ -3,12 +3,10 @@
   import PageHeader from '$lib/psa/PageHeader.svelte';
   import ContactSection from '$lib/psa/ContactSection.svelte';
   import ScanSection from '$lib/psa/ScanSection.svelte';
+  import Seo from '$lib/psa/Seo.svelte';
 </script>
 
-<svelte:head>
-  <title>{$_('contactPage.title')} — Pépinière Semences d'Avenir</title>
-  <meta name="description" content={$_('contactPage.subtitle')} />
-</svelte:head>
+<Seo title={$_('contactPage.title')} description={$_('seo.contact')} image="/og/contact.jpg" />
 
 <PageHeader
   kicker={$_('hero.eyebrow')}
